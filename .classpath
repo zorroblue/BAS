@@ -12,5 +12,7 @@
 	<classpathentry kind="lib" path="/home/rameshwar/Desktop/hibernate-release-4.2.3.Final/lib/required/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="/home/rameshwar/Desktop/hibernate-release-4.2.3.Final/lib/required/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
 	<classpathentry kind="lib" path="/home/rameshwar/Desktop/hibernate-release-4.2.3.Final/lib/jpa/hibernate-entitymanager-4.2.3.Final.jar"/>
+	<classpathentry kind="lib" path="/home/rameshwar/jfxrt.jar"/>
+	<classpathentry kind="lib" path="/home/rameshwar/Downloads/jfoenix.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

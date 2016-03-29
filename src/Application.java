@@ -12,11 +12,11 @@ import model.Vendor;
 public class Application {
 	public static void main(String args[])
 	{
-		Configuration configuration=new Configuration().configure();
+/*		Configuration configuration=new Configuration().configure();
 		SessionFactory factory= configuration.buildSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
-		/*Employee employee=new Employee();
+		Employee employee=new Employee();
 		employee.setId(10000);
 		employee.setName("Rameshwar");
 		
@@ -24,19 +24,19 @@ public class Application {
 		
 		
 		session.save(employee);
-		*/
+		
 		Vendor vendor=new Vendor();
 		vendor.setVendorAddress("Chennai");
 		vendor.setVendorEmail("me@gmail.com");
 		vendor.setVendorName("Ravi Book store");
-		vendor.setVendorId(21112);
+		vendor.setVendorId(2112112);
 		session.save(vendor);
 		
 		SalesDay salesDay=new SalesDay();
 		salesDay.setDate(new Date(1, 12, 2014));
 		
 		Publisher publisher=new Publisher();
-		publisher.setPublisherId(21512);
+		publisher.setPublisherId(2152112);
 		publisher.setPublisherName("Spring");
 		publisher.setVendor(vendor);
 		session.save(publisher);
@@ -45,7 +45,7 @@ public class Application {
 		book.setAuthorName("Cormen");
 		book.setAverageDays(212);
 		book.setBookTitle("Algorithms");
-		book.setISBN(11912);
+		book.setISBN(119112122);
 	//	book.setNoOfRequests(98);
 		book.setNoOfCopies(12);
 		book.setPrice(1222);
@@ -58,7 +58,7 @@ public class Application {
 		book1.setAuthorName("Cormen");
 		book1.setAverageDays(212);
 		book1.setBookTitle("Functional Equations");
-		book1.setISBN(212112);
+		book1.setISBN(21211212);
 	//	book.setNoOfRequests(98);
 		book1.setNoOfCopies(12);
 		book1.setPrice(1222);
@@ -70,7 +70,7 @@ public class Application {
 		session.save(salesDay);
 		session.getTransaction().commit();
 		
-		
+		*/
 		
 	}
 
