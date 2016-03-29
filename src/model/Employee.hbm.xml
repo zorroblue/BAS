@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="model">
+<class name="Employee" table="employee">
+	<id name="id" column="id"></id>
+	<property name="name" column="name"></property>
+	<property name="userName" column="userName"></property>
+	<property name="password" column="password"></property>
+	<property name="empCode" column="empCode"></property>
+	</class>
+	
+</hibernate-mapping>

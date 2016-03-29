@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="model">
+<class name="Publisher" table="publisher">
+	<id name="publisherId" column="PUBLISHER_ID">
+	<generator class="assigned"></generator>
+	</id>
+	<property name="publisherName" column="publisherName"></property>
+	<many-to-one name="vendor" class="Vendor" column="vendor_id" unique="true"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

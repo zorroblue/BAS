@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="model">
+<class name="Book" table="book">
+	<id name="ISBN" column="ISBN">
+	<generator class="assigned"></generator>
+	</id>
+	<property name="bookTitle" column="bookTitle"></property>
+	<property name="authorName" column="authorName"></property>
+	<property name="noOfCopies" column="noOfCopies"></property>
+	<property name="rackNo" column="rackNo"></property>
+	<property name="price" column="price"></property>
+	<property name="averageDays" column="averageDays"></property>
+	<property name="noOfRequests" column="noOfRequests"></property>
+	<property name="imageFileName" column="imageFileName"></property>
+	<property name="threshold" column="threshold"></property>
+	<many-to-one name="publisher" class="Publisher" column="publisher_id" unique="true"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

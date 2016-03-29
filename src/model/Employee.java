@@ -3,13 +3,22 @@ package model;
 public class Employee 
 {
 
-	private String name,employeeUserName,employeePassword;
-	private Integer employeeID;
+	private String name,userName,password;
 	protected Integer empCode; // code for deciding the hierarchy of the employee
+	private Integer id;
 	// 0 for normal employee,1 for sales clerk , 2 for manager, 3 for owner
-	Employee()
+	public Employee()
 	{
 		this.empCode=0;
+	}
+	
+	public Employee(String name,String userName, String password,Integer id, Integer empCode)
+	{
+		this.name=name;
+		this.id=id;
+		this.password=password;
+		this.userName=userName;
+		this.empCode=empCode;
 	}
 	public void updateStock()
 	{
@@ -25,28 +34,36 @@ public class Employee
 		this.name = name;
 	}
 
-	public String getEmployeeUserName() {
-		return employeeUserName;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setEmployeeUserName(String employeeUserName) {
-		this.employeeUserName = employeeUserName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getEmployeePassword() {
-		return employeePassword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setEmployeePassword(String employeePassword) {
-		this.employeePassword = employeePassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Integer getEmployeeID() {
-		return employeeID;
+	public Integer getEmpCode() {
+		return empCode;
 	}
 
-	public void setEmployeeID(Integer employeeID) {
-		this.employeeID = employeeID;
+	public void setEmpCode(Integer empCode) {
+		this.empCode = empCode;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	

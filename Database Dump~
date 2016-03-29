@@ -1,0 +1,20 @@
+CREATE DATABASE BAS;
+USE BAS;
+
+create table employee( id INT NOT NULL, name VARCHAR(40) NOT NULL, userName VARCHAR(40) ,password VARCHAR(40) , empCode INT NOT NULL);
+
+create table vendor( VENDOR_ID INT(5) NOT NULL, vendorName VARCHAR(40) NOT NULL ,vendorAddress VARCHAR(40) NOT NULL, vendorEmail VARCHAR(40) NOT NULL, PRIMARY KEY(VENDOR_ID) );
+
+create table publisher( PUBLISHER_ID INT(5) NOT NULL ,publisherName VARCHAR(40) NOT NULL, vendor_id INT(5) NOT NULL, PRIMARY KEY(PUBLISHER_ID) , CONSTRAINT FK_VEN_ID FOREIGN KEY(vendor_id) REFERENCES vendor(VENDOR_ID) );
+
+create table book ( ISBN INT(20) NOT NULL, bookTitle VARCHAR(40) NOT NULL, authorName VARCHAR(40) NOT NULL, price INT(10) NOT NULL, noOfCopies INT(10) NOT NULL, noOfRequests INT(10) NOT NULL, rackNo INT(5) NOT NULL, averageDays INT(5) NOT NULL, imageFileName VARCHAR(40) NOT NULL, publisher_id INT(5) DEFAULT NULL, PRIMARY KEY(ISBN) , CONSTRAINT FK_PUB_ID FOREIGN KEY(publisher_id) REFERENCES publisher(PUBLISHER_ID) ); 
+
+alter table book add threshold INT(5);
+
+create table sales_day( sales_id INT(5) , date datetime NOT NULL , PRIMARY KEY(sales_id)); 
+
+alter table book add idx INT(5) default null;
+
+ alter table book add sales_id default null;
+
+

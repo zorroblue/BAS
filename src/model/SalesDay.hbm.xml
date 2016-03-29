@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="model">
+<class name="SalesDay" table="sales_day">
+	<id name="salesId" column="sales_id">
+	<generator class="native"></generator>
+	</id>
+	<list name="booksSold" >
+		<key column="sales_id"/>
+		<list-index column="idx"></list-index>
+		<one-to-many class="Book"/>
+	</list>
+	<property name="date" column="date"/>
+	</class>
+	
+</hibernate-mapping>
