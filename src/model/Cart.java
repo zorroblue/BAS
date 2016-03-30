@@ -6,33 +6,30 @@ import java.util.ArrayList;
 public class Cart {
 //As cart is a session-bases setup and is not to be saved as such, it is not persisted to database
 	
-	ArrayList<Book> bookList=new ArrayList<Book>();
+	ArrayList<CartItem> cart;
 	
-	public ArrayList<Book> getBookList() {
-		return bookList;
+	
+	public ArrayList<CartItem> getCart() {
+		return cart;
 	}
-
-	public void setBookList(ArrayList<Book> bookList) {
-		this.bookList = bookList;
+	
+	public void setCart(ArrayList<CartItem> cart) {
+		this.cart = cart;
 	}
-
-	public void addBook(Book book)
-	{
-		bookList.add(book);
-	}
+	
 	public void generateBill()
 	{
 		//		TODO
 		// GENERATE PDF
 	}
-	public void deleteBook(Book book)
+	public void deleteCartItem(CartItem cartItem)
 	{
-		bookList.remove(book);
+		cart.remove(cartItem);
 	}
 	
 	public void clearCart()
 	{
-		bookList.clear();
+		cart.clear();
 	}
 	
 	

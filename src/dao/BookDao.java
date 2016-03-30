@@ -10,16 +10,18 @@ import org.hibernate.cfg.Configuration;
 
 import model.Book;
 import views.ErrorDialog;
+import views.SuccessDialog;
 
 //Manages the basic CRUD operations on the Book table
 public class BookDao {
 	
-	public void addBook(Book thebook)
+	public void addBook(Book thebook,Integer quantity)
 	{
 		Configuration configuration=new Configuration().configure();
 		SessionFactory factory= configuration.buildSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
+		thebook.setNoOfCopies(quantity);
 		try
 		{
 			Integer ISBN=thebook.getISBN();
@@ -28,10 +30,14 @@ public class BookDao {
 			{
 				session.save(thebook);
 				session.getTransaction().commit();
+				new SuccessDialog().invoke("Done!");
+				session.close();
+				return;
 			}
-			book.setNoOfCopies(book.getNoOfCopies()+1);
+			book.setNoOfCopies(book.getNoOfCopies()+quantity);
 			session.update(book);
 			session.getTransaction().commit();
+			new SuccessDialog().invoke("Done!");
 		}
 		catch(Exception e)
 		{
@@ -67,6 +73,7 @@ public class BookDao {
 		{
 			book.setNoOfCopies(book.getNoOfCopies()-1);
 			session.update(book);
+			new SuccessDialog().invoke("Successfully deleted!");
 			session.getTransaction().commit();
 		}
 		catch(Exception e)
@@ -101,7 +108,7 @@ public class BookDao {
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Query query=session.createQuery("from Book where authorName = :authorname");
-		query.setString("authorname", authorName);
+		query.setString("authorname", authorName.toUpperCase());
 		List<Book> bookList=(List<Book>)query.list();
 		return bookList;
 		

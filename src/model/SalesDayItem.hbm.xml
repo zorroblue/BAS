@@ -4,16 +4,12 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
 <hibernate-mapping package="model">
-<class name="SalesDay" table="sales_day">
-	<id name="salesId" column="sales_id">
+<class name="SalesDayItem" table="sales_item">
+	<id name="salesItemId" column="item_id">
 	<generator class="native"></generator>
 	</id>
-	<list name="booksSold" >
-		<key column="sales_id"/>
-		<list-index column="idx"></list-index>
-		<one-to-many class="SalesDayItem"/>
-	</list>
-	<property name="date" column="date"/>
+	<property name="copiesSold" column="copiesSold"></property>
+	<many-to-one name="book" class="Book" column="ISBN"></many-to-one>
 	</class>
 	
 </hibernate-mapping>

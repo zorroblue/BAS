@@ -17,4 +17,6 @@ alter table book add idx INT(5) default null;
 
 alter table book add sales_id default null;
 
+create table not_in_collection( book_id INT(5) NOT NULL, noOfRequests INT(5) DEFAULT NULL, bookTitle varchar(40) default null , authorName varchar(40) default null, publisherName varchar(40) default null, ISBNCode int(20) default null); 
+
 

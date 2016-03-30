@@ -8,9 +8,9 @@ public class Book {
 	private Publisher publisher;
 	private Integer price;
 	private Integer ISBN;
-	private static Integer noOfCopies=1;
+	private Integer noOfCopies=1;
 	private Integer rackNo;
-	private static Integer noOfRequests;
+	private Integer noOfRequests;
 	private Integer averageDays; //average number of days to procure the book
 	private String imageFileName; //stores the location of the bitmap (additional and optional feaature to enhance UI)
 	private Integer threshold; //stores the threshold of book required.1
@@ -42,7 +42,7 @@ public class Book {
 		return bookTitle;
 	}
 	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
+		this.bookTitle = bookTitle.toUpperCase();
 	}
 	public String getAuthorName() {
 		return authorName;

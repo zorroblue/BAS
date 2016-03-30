@@ -10,7 +10,7 @@ public class SalesDay {
 	
 	//TODO : persisted to the database
 	Integer salesId;
-	List<Book> booksSold=new ArrayList<Book>();
+	List<SalesDayItem> booksSold=new ArrayList<SalesDayItem>();
 	Date date;
 	
 	
@@ -26,11 +26,10 @@ public class SalesDay {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	public List<Book> getBooksSold() {
+	public List<SalesDayItem> getBooksSold() {
 		return booksSold;
 	}
-	public void setBooksSold(List<Book> booksSold) {
+	public void setBooksSold(List<SalesDayItem> booksSold) {
 		this.booksSold = booksSold;
 	}
 

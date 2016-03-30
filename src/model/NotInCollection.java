@@ -5,11 +5,23 @@ package model;
 public class NotInCollection
 {
 	//needs to be persisted.
+	private Integer requestId;
 	private Integer noOfRequests;
 	private String bookTitle,authorName,publisherName;
 	private Integer ISBNCode;
+	
+	public NotInCollection() {
+		// TODO Auto-generated constructor stub
+		noOfRequests=1;
+	}
 	public Integer getNoOfRequests() {
 		return noOfRequests;
+	}
+	public Integer getRequestId() {
+		return requestId;
+	}
+	public void setRequestId(Integer requestId) {
+		this.requestId = requestId;
 	}
 	public void setNoOfRequests(Integer noOfRequests) {
 		this.noOfRequests = noOfRequests;
@@ -38,5 +50,5 @@ public class NotInCollection
 	public void setISBNCode(Integer iSBNCode) {
 		ISBNCode = iSBNCode;
 	}
-	
+
 }
