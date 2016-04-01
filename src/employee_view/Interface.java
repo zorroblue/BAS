@@ -5,11 +5,14 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -36,7 +39,7 @@ public class Interface {
 	private static JTextField textField_3;
 	private static JTextField textField_4;
 	private static JTable table;
-	private static JTextField textField_5;
+	private static JTextField txtISBN_sc;
 	private static JTextField textField_6;
 	private static JTextField txtBookTitle;
 	private static JTextField txtAuthorName;
@@ -45,9 +48,10 @@ public class Interface {
 	private static JTextField textField_11;
 	private static JTextField textField_12;
 	private static JTextField textField_13;
-	private static JTextField textField_14;
+	private static JTextField txtnoOfCopies;
 	private static JTextField textField_15;
 	private static JTextField textField_16;
+	private static JTextField txtNoOfCopies;
 
 	public static void application() {
 		JFrame window = new JFrame("Book Shop Automation");
@@ -65,6 +69,77 @@ public class Interface {
 		tabbedPane.addTab("Customer", null, Customer, null);
 		Customer.setLayout(new CardLayout(0, 0));
 
+		JPanel Query = new JPanel();
+		Customer.add(Query, "name_22829458616742");
+		Query.setLayout(null);
+
+		JButton btnSearch = new JButton("Search");
+		btnSearch.setBounds(408, 40, 89, 23);
+		Query.add(btnSearch);
+
+		textField = new JTextField();
+		textField.setBounds(163, 41, 235, 20);
+		Query.add(textField);
+		textField.setColumns(10);
+
+		JLabel lblSearchByBook = new JLabel("Search by Book title");
+		lblSearchByBook.setBounds(39, 44, 114, 14);
+		Query.add(lblSearchByBook);
+
+		JLabel lblSearchByAuthor = new JLabel("Search by author");
+		lblSearchByAuthor.setBounds(39, 81, 114, 14);
+		Query.add(lblSearchByAuthor);
+
+		textField_1 = new JTextField();
+		textField_1.setBounds(163, 78, 235, 20);
+		Query.add(textField_1);
+		textField_1.setColumns(10);
+
+		JButton btnSearch_1 = new JButton("Search");
+		btnSearch_1.setBounds(408, 77, 89, 23);
+		Query.add(btnSearch_1);
+
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(80, 123, 354, 259);
+		Query.add(scrollPane);
+
+		
+		
+		/*
+		 *
+		 JLabel lblMyCart = new JLabel("My Cart");
+		lblMyCart.setBounds(557, 117, 46, 20);
+		Query.add(lblMyCart);
+
+		JList list = new JList();
+		list.setBounds(493, 136, 164, 246);
+		Query.add(list);
+
+		  JButton btnEditCart = new JButton("Edit Cart");
+		btnEditCart.setBounds(486, 382, 75, 23);
+		Query.add(btnEditCart);
+
+		JButton btnDeleteCart = new JButton("Delete Cart");
+		btnDeleteCart.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnDeleteCart.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnDeleteCart.setBounds(590, 382, 89, 23);
+		Query.add(btnDeleteCart);
+
+		JButton btnFinaliseCart = new JButton("Finalise Cart");
+		btnFinaliseCart.setBounds(527, 409, 103, 23);
+		Query.add(btnFinaliseCart);
+*/
+		JButton btnViewSelectedBook = new JButton("View selected book");
+		btnViewSelectedBook.setBounds(169, 409, 164, 23);
+		Query.add(btnViewSelectedBook);
+
+		
+		
+		
 		JPanel viewBook = new JPanel();
 		Customer.add(viewBook, "name_25346409520612");
 		viewBook.setLayout(null);
@@ -206,75 +281,7 @@ public class Interface {
 		orderBookPanel.add(textField_16);
 		textField_16.setColumns(10);
 
-		JPanel Query = new JPanel();
-		Customer.add(Query, "name_22829458616742");
-		Query.setLayout(null);
-
-		JButton btnSearch = new JButton("Search");
-		btnSearch.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnSearch.setBounds(408, 40, 89, 23);
-		Query.add(btnSearch);
-
-		textField = new JTextField();
-		textField.setBounds(163, 41, 235, 20);
-		Query.add(textField);
-		textField.setColumns(10);
-
-		JLabel lblSearchByBook = new JLabel("Search by Book title");
-		lblSearchByBook.setBounds(39, 44, 114, 14);
-		Query.add(lblSearchByBook);
-
-		JLabel lblSearchByAuthor = new JLabel("Search by author");
-		lblSearchByAuthor.setBounds(39, 81, 114, 14);
-		Query.add(lblSearchByAuthor);
-
-		textField_1 = new JTextField();
-		textField_1.setBounds(163, 78, 235, 20);
-		Query.add(textField_1);
-		textField_1.setColumns(10);
-
-		JButton btnSearch_1 = new JButton("Search");
-		btnSearch_1.setBounds(408, 77, 89, 23);
-		Query.add(btnSearch_1);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(80, 123, 354, 259);
-		Query.add(scrollPane);
-
-		JLabel lblMyCart = new JLabel("My Cart");
-		lblMyCart.setBounds(557, 117, 46, 20);
-		Query.add(lblMyCart);
-
-		JList list = new JList();
-		list.setBounds(493, 136, 164, 246);
-		Query.add(list);
-
-		JButton btnEditCart = new JButton("Edit Cart");
-		btnEditCart.setBounds(486, 382, 75, 23);
-		Query.add(btnEditCart);
-
-		JButton btnDeleteCart = new JButton("Delete Cart");
-		btnDeleteCart.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnDeleteCart.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnDeleteCart.setBounds(590, 382, 89, 23);
-		Query.add(btnDeleteCart);
-
-		JButton btnFinaliseCart = new JButton("Finalise Cart");
-		btnFinaliseCart.setBounds(527, 409, 103, 23);
-		Query.add(btnFinaliseCart);
-
-		JButton btnViewSelectedBook = new JButton("View selected book");
-		btnViewSelectedBook.setBounds(169, 409, 164, 23);
-		Query.add(btnViewSelectedBook);
-
+		
 		JPanel Employee = new JPanel();
 		tabbedPane.addTab("Employee", null, Employee, null);
 		Employee.setLayout(new CardLayout(0, 0));
@@ -473,10 +480,10 @@ public class Interface {
 		panel.add(textField_13);
 		textField_13.setColumns(10);
 
-		textField_14 = new JTextField();
-		textField_14.setBounds(464, 189, 46, 20);
-		panel.add(textField_14);
-		textField_14.setColumns(10);
+		txtnoOfCopies = new JTextField();
+		txtnoOfCopies.setBounds(464, 189, 46, 20);
+		panel.add(txtnoOfCopies);
+		txtnoOfCopies.setColumns(10);
 
 		JLabel lblNumberOfCopies = new JLabel("Number of copies");
 		lblNumberOfCopies.setBounds(71, 61, 129, 14);
@@ -509,10 +516,10 @@ public class Interface {
 		Employee.add(salesclerkPanel, "name_23371904062736");
 		salesclerkPanel.setLayout(null);
 
-		textField_5 = new JTextField();
-		textField_5.setBounds(351, 154, 168, 20);
-		salesclerkPanel.add(textField_5);
-		textField_5.setColumns(10);
+		txtISBN_sc = new JTextField();
+		txtISBN_sc.setBounds(351, 154, 168, 20);
+		salesclerkPanel.add(txtISBN_sc);
+		txtISBN_sc.setColumns(10);
 
 		JLabel lblIsbn_1 = new JLabel("ISBN : ");
 		lblIsbn_1.setBounds(251, 157, 59, 14);
@@ -531,13 +538,32 @@ public class Interface {
 		salesclerkPanel.add(lblNewLabel_7);
 
 		JButton btnNext = new JButton("Next book ->");
-		btnNext.setBounds(471, 364, 153, 23);
+		btnNext.setBounds(478, 318, 153, 23);
 		salesclerkPanel.add(btnNext);
+		
+		JLabel lblNoOfCopies_1 = new JLabel("No Of copies");
+		lblNoOfCopies_1.setBounds(251, 193, 70, 15);
+		salesclerkPanel.add(lblNoOfCopies_1);
+		
+		txtNoOfCopies = new JTextField();
+		txtNoOfCopies.setBounds(351, 186, 168, 19);
+		salesclerkPanel.add(txtNoOfCopies);
+		txtNoOfCopies.setColumns(10);
+		
+		JButton btnGenerateReceipt = new JButton("GENERATE RECEIPT");
+		btnGenerateReceipt.setBounds(265, 370, 139, 25);
+		salesclerkPanel.add(btnGenerateReceipt);
+		
+		
 		managerPanel.setVisible(false);
 		generalPanel.setVisible(false);
 		salesclerkPanel.setVisible(false);
 		loginPanel.setVisible(true);
 		ownerPanel.setVisible(false);
+		
+		Query.setVisible(true);
+		viewBook.setVisible(false);
+		
 		
 		// all button listeners are here
 		//added by rameshwar
@@ -550,7 +576,7 @@ public class Interface {
 				{
 					
 					//new SuccessDialog().invoke("Successful login as manager");
-					new ToastMessage("Successful login", 500).setVisible(true);;
+					new ToastMessage("Successful login", 1000).setVisible(true);;
 					loginPanel.setVisible(false);
 					managerPanel.setVisible(true);
 				}
@@ -594,6 +620,7 @@ public class Interface {
 			}
 		});
 		
+		//find of isbn in update database
 		btnFind.addActionListener(new ActionListener() {
 			
 			@Override
@@ -621,9 +648,112 @@ public class Interface {
 				
 			}
 		});
-	}
+		
+	//next button of sales clerk	
+	btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				//validate existing book
+				//TODO : CHECK IF ALL COLUMNS ARE FILLED
+				
+				try
+				{
+					Integer ISBN=Integer.valueOf(txtISBN_sc.getText());
+					if(!new BookDao().doesBookExist(ISBN))
+					{
+						new ErrorDialog().invoke("Book does not exist in database");
+						return;
+					}
+					else
+					{
+						Book thebook=new BookDao().getBookByISBN(ISBN);
+						if(thebook.getNoOfCopies()< Integer.valueOf(txtNoOfCopies.getText()))
+						{
+							//not enough books to sell
+							new ErrorDialog().invoke("Sorry! There are only "+thebook.getNoOfCopies()+" copies left!");
+						}
+					}	
+				}
+				catch(Exception e1)
+				{
+					e1.printStackTrace();
+				}
+			}
+		});
+	
+	//search button of query by title
+	btnSearch.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			String title=textField.getText();
+			try
+			{
+				if(title==null || title.equals(""))
+				{
+					new ErrorDialog().invoke("Please enter the book title");
+					return;
+				}
+				List<Book> bookList=new BookDao().getBooksByTitle(title);
+				if(bookList==null || bookList.isEmpty())
+				{
+					JDialog.setDefaultLookAndFeelDecorated(true);
+					int response=JOptionPane.showConfirmDialog(Query, "No such book in database! Do you want to request for it?", "Not in database", JOptionPane.INFORMATION_MESSAGE);
+					if(response==JOptionPane.YES_OPTION)
+					{
+						Query.setVisible(false);
+						orderBookPanel.setVisible(true);
+					}
+					//TODO ADD TO LIST
+					
+					
+				}
+			}
+			catch(Exception e)
+			{
+				return;
+			}
+		}
+	});
 
-	public static void main(String[] args) {
+	btnSearch_1.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			String title=textField_1.getText();
+			try
+			{
+				List<Book> bookList=new BookDao().getBooksByAuthorName(title);
+				if(title==null || title.equals(""))
+				{
+					new ErrorDialog().invoke("Please enter the author name");
+					return;
+				}
+				if(bookList==null || bookList.isEmpty())
+				{
+					JDialog.setDefaultLookAndFeelDecorated(true);
+					int response=JOptionPane.showConfirmDialog(Query, "No such book in database! Do you want to request for it?", "Not in database", JOptionPane.INFORMATION_MESSAGE);
+					if(response==JOptionPane.YES_OPTION)
+					{
+						Query.setVisible(false);
+						orderBookPanel.setVisible(true);
+				}
+					//TODO ADD TO LIST
+					
+					
+				}
+			}
+			catch(Exception e)
+			{
+				return;
+			}
+		}
+	});
+
+
+	}
+	public static void main(String[] args) 
+	{
 		application();
 	}
 }

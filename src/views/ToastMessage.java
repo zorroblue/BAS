@@ -20,7 +20,7 @@ public class ToastMessage extends JDialog {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.GRAY);
-        panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+        panel.setBorder(new LineBorder(Color.BLACK, 2));
         getContentPane().add(panel, BorderLayout.CENTER);
 
         JLabel toastLabel = new JLabel("");
