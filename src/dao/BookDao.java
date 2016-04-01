@@ -113,5 +113,28 @@ public class BookDao {
 		return bookList;
 		
 	}
-
+	
+	public boolean doesBookExist(Integer ISBN)
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		Book book=(Book)session.get(Book.class, ISBN);
+		if(book==null)
+		{
+			return false;
+		}
+		return true;
+	}
+	
+	public Book getBookByISBN(Integer ISBN)
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		Book book=(Book)session.get(Book.class, ISBN);
+		return book;
+	}
 }
