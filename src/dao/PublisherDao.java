@@ -36,6 +36,10 @@ public class PublisherDao {
 			e.printStackTrace();
 			return;
 		}
+		finally
+		{
+			session.close();
+		}
 	}
 	
 	public Publisher getPublisherById(Integer Id)
@@ -88,6 +92,8 @@ public class PublisherDao {
 				session.getTransaction().rollback();
 			return false;
 		}
-		
+		finally {
+			session.close();
+		}
 	}
 }

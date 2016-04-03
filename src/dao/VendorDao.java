@@ -35,6 +35,9 @@ public class VendorDao {
 			e.printStackTrace();
 			return;
 		}
+		finally {
+			session.close();
+		}
 	}
 	
 	public Vendor getVendorById(Integer Id)
@@ -54,6 +57,10 @@ public class VendorDao {
 			if(session.getTransaction()!=null)
 				session.getTransaction().rollback();
 			return null;
+		}
+		finally
+		{
+			session.close();
 		}
 		
 	}
@@ -83,7 +90,9 @@ public class VendorDao {
 				session.getTransaction().rollback();
 			return false;
 		}
-		
+		finally {
+			session.close();
+		}
 	}
 
 }

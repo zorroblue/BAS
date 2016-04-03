@@ -65,6 +65,9 @@ public class NotInCollectionDao {
 		{
 			e.printStackTrace();
 		}
+		finally {
+			session.close();
+		}
 	}
 	
 	//Function that helps view requests based on descending number of requests.

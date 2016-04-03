@@ -1,11 +1,9 @@
-package employee_view;
-
+package views;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -26,16 +24,16 @@ import javax.swing.SwingConstants;
 import com.toedter.calendar.JDateChooser;
 
 import dao.BookDao;
-import dao.TransactionDao;
+import dao.PublisherDao;
 import dao.VendorDao;
 import model.Book;
-import model.Cart;
+import model.Publisher;
 import model.Vendor;
 import views.ErrorDialog;
 import views.SuccessDialog;
 import views.ToastMessage;
 
-public class Interface_new {
+public class Temp {
 
 	private static JTextField txtUsername;
 	private static JTextField textField;
@@ -58,8 +56,6 @@ public class Interface_new {
 	private static JTextField textField_15;
 	private static JTextField textField_16;
 	private static JTextField textField_7;
-	private static Cart cart;	
-	
 	private static JTextField textField_8;
 	private static JTextField textField_9;
 	private static JTextField textField_17;
@@ -87,15 +83,15 @@ public class Interface_new {
 		Customer.setLayout(customerCard);
 
 		JPanel viewBook = new JPanel();
-		
-		
+
 		viewBook.setVisible(false);
 		viewBook.setLayout(null);
 
-		/*JLabel lblNewLabel = new JLabel("IMG");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(280, 22, 118, 141);
-		viewBook.add(lblNewLabel);*/
+		/*
+		 * JLabel lblNewLabel = new JLabel("IMG");
+		 * lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		 * lblNewLabel.setBounds(280, 22, 118, 141); viewBook.add(lblNewLabel);
+		 */
 
 		JLabel label = new JLabel("");
 		label.setBounds(58, 127, 46, 14);
@@ -144,21 +140,19 @@ public class Interface_new {
 
 		JPanel paymentPanel = new JPanel();
 		paymentPanel.setVisible(false);
-		
+
 		paymentPanel.setLayout(null);
 
-		/*JButton btnAddToCart = new JButton("Add to cart");
-		btnAddToCart.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				viewBook.setVisible(false);
-				paymentPanel.setVisible(true);
-
-			}
-		})
-		btnAddToCart.setBounds(280, 409, 118, 23);
-		viewBook.add(btnAddToCart);
-*/
+		/*
+		 * JButton btnAddToCart = new JButton("Add to cart");
+		 * btnAddToCart.addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent arg0) {
+		 * viewBook.setVisible(false); paymentPanel.setVisible(true);
+		 * 
+		 * } }) btnAddToCart.setBounds(280, 409, 118, 23);
+		 * viewBook.add(btnAddToCart);
+		 */
 		JLabel lblRackNumber = new JLabel("Rack Number : ");
 		lblRackNumber.setBounds(190, 304, 110, 14);
 		viewBook.add(lblRackNumber);
@@ -200,7 +194,7 @@ public class Interface_new {
 		paymentPanel.add(table);
 
 		JPanel orderBookPanel = new JPanel();
-		
+
 		orderBookPanel.setVisible(false);
 		orderBookPanel.setLayout(null);
 
@@ -283,33 +277,27 @@ public class Interface_new {
 		JButton btnSearch_1 = new JButton("Search");
 		btnSearch_1.setBounds(408, 77, 89, 23);
 		Query.add(btnSearch_1);
-/*
-		JLabel lblMyCart = new JLabel("My Cart");
-		lblMyCart.setBounds(557, 117, 46, 20);
-		Query.add(lblMyCart);
-
-		JList list = new JList();
-		list.setBounds(493, 136, 164, 246);
-		Query.add(list);
-
-		JButton btnEditCart = new JButton("Edit Cart");
-		btnEditCart.setBounds(486, 382, 75, 23);
-		Query.add(btnEditCart);
-
-		JButton btnDeleteCart = new JButton("Delete Cart");
-		btnDeleteCart.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnDeleteCart.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnDeleteCart.setBounds(590, 382, 89, 23);
-		Query.add(btnDeleteCart);
-
-		JButton btnFinaliseCart = new JButton("Finalise Cart");
-		btnFinaliseCart.setBounds(527, 409, 103, 23);
-		Query.add(btnFinaliseCart);
-*/
+		/*
+		 * JLabel lblMyCart = new JLabel("My Cart"); lblMyCart.setBounds(557,
+		 * 117, 46, 20); Query.add(lblMyCart);
+		 * 
+		 * JList list = new JList(); list.setBounds(493, 136, 164, 246);
+		 * Query.add(list);
+		 * 
+		 * JButton btnEditCart = new JButton("Edit Cart");
+		 * btnEditCart.setBounds(486, 382, 75, 23); Query.add(btnEditCart);
+		 * 
+		 * JButton btnDeleteCart = new JButton("Delete Cart");
+		 * btnDeleteCart.addActionListener(new ActionListener() {
+		 * 
+		 * @Override public void actionPerformed(ActionEvent arg0) { } });
+		 * btnDeleteCart.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		 * btnDeleteCart.setBounds(590, 382, 89, 23); Query.add(btnDeleteCart);
+		 * 
+		 * JButton btnFinaliseCart = new JButton("Finalise Cart");
+		 * btnFinaliseCart.setBounds(527, 409, 103, 23);
+		 * Query.add(btnFinaliseCart);
+		 */
 		JButton btnViewSelectedBook = new JButton("View selected book");
 		btnViewSelectedBook.setBounds(169, 409, 164, 23);
 		Query.add(btnViewSelectedBook);
@@ -321,26 +309,22 @@ public class Interface_new {
 		queryBookList.setBounds(80, 136, 336, 245);
 		Query.add(queryBookList);
 
-		
-		//CHANGE MADE BY RAMESHWAR
+		// CHANGE MADE BY RAMESHWAR
 		btnViewSelectedBook.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
 				if (queryBookList.isSelectionEmpty() && queryBookList.getModel().getSize() != 0)
 					JOptionPane.showMessageDialog(window, "Select one of the above books to view by clicking");
-				else if (queryBookList.getModel().getSize() == 0)
-				{
+				else if (queryBookList.getModel().getSize() == 0) {
 					JOptionPane.showMessageDialog(window, "No books available to view");
-				}
-				else {
+				} else {
 					int choice = queryBookList.getSelectedIndex();
-					//JOptionPane.showMessageDialog(window, choice);
-					
-					
+					// JOptionPane.showMessageDialog(window, choice);
+
 					Query.setVisible(false);
 					viewBook.setVisible(true);
-					//JOptionPane.showMessageDialog(window, model.get(choice));
+					// JOptionPane.showMessageDialog(window, model.get(choice));
 					String isbn = "";
 					String s = model.get(choice);
 					for (int i = 0; i < s.length(); i++) {
@@ -351,15 +335,14 @@ public class Interface_new {
 					BookDao dao1 = new BookDao();
 					Book thisBook = dao1.getBookByISBN(Integer.parseInt(isbn));
 
-					//increment requests if book is not in Stock RAMESHWAR	
-					if(thisBook.getNoOfCopies()==0)
-					{
-						thisBook.setNoOfRequests(thisBook.getNoOfRequests()+1);
+					// increment requests if book is not in Stock RAMESHWAR
+					if (thisBook.getNoOfCopies() == 0) {
+						thisBook.setNoOfRequests(thisBook.getNoOfRequests() + 1);
 						new BookDao().updateRequests(thisBook);
-						new ErrorDialog().invoke("The book is presently not in stock.The book will be available in 2-3 business days.");
+						new ErrorDialog().invoke(
+								"The book is presently not in stock.The book will be available in 2-3 business days.");
 					}
-					
-					
+
 					lblNewLabel_1.setText(thisBook.getBookTitle());
 					mlblAName.setText(thisBook.getAuthorName());
 					lblNewLabel_2.setText(thisBook.getPrice().toString());
@@ -371,13 +354,11 @@ public class Interface_new {
 
 			}
 		});
-		
-		
-		//adding to the customer tab
+
+		// adding to the customer tab
 		Customer.add(viewBook, "name_25346409520612");
 		Customer.add(paymentPanel, "name_110213687162882");
 		Customer.add(orderBookPanel, "name_117790567923386");
-		
 
 		JPanel Employee = new JPanel();
 		tabbedPane.addTab("Employee", null, Employee, null);
@@ -419,32 +400,15 @@ public class Interface_new {
 		JButton btnNewButton = new JButton("Generate Receipt");
 		btnNewButton.setBounds(303, 133, 117, 36);
 		salesclerkPanel.add(btnNewButton);
-		
-		
-		
 
 		JButton btnNewButton_1 = new JButton("Update database");
 		btnNewButton_1.setBounds(303, 204, 117, 36);
 		salesclerkPanel.add(btnNewButton_1);
-		
-		
-		//next button for the salesclerk
-				//uses Cart 
-		btnNewButton_1.addActionListener(new ActionListener() {
-				
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-					
-				}
-			});
 
 		JButton btnLogOut_3 = new JButton("Log out");
 		btnLogOut_3.setBounds(580, 11, 89, 23);
 		salesclerkPanel.add(btnLogOut_3);
 
-		
-		
 		JPanel statisticsPanel = new JPanel();
 		Employee.add(statisticsPanel, "name_177266559159994");
 		statisticsPanel.setLayout(null);
@@ -515,8 +479,6 @@ public class Interface_new {
 		JButton btnLogOut = new JButton("Log out");
 		btnLogOut.setBounds(580, 11, 89, 23);
 		ownerPanel.add(btnLogOut);
-		
-		
 
 		JPanel generalPanel = new JPanel();
 		Employee.add(generalPanel, "name_23515077757223");
@@ -542,86 +504,96 @@ public class Interface_new {
 		generalPanel.add(btnFind);
 
 		JPanel absentPanel = new JPanel();
-		absentPanel.setBounds(74, 133, 541, 255);
+		absentPanel.setBounds(74, 133, 578, 267);
 		generalPanel.add(absentPanel);
 		absentPanel.setLayout(null);
 
 		JLabel lblNewLabel_11 = new JLabel(
-				"This book is not already a part of a database. Fill out these details to add the book : ");
-		lblNewLabel_11.setBounds(50, 11, 425, 14);
+				"This book is not already a part of the database. Fill out these details to add the book : ");
+		lblNewLabel_11.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_11.setBounds(0, 11, 539, 14);
 		absentPanel.add(lblNewLabel_11);
 
 		JLabel lblNewLabel_12 = new JLabel("Book title");
-		lblNewLabel_12.setBounds(29, 36, 61, 14);
+		lblNewLabel_12.setBounds(29, 60, 101, 14);
 		absentPanel.add(lblNewLabel_12);
 
 		JLabel lblNewLabel_13 = new JLabel("Author Name");
-		lblNewLabel_13.setBounds(29, 72, 73, 14);
+		lblNewLabel_13.setBounds(29, 99, 101, 14);
 		absentPanel.add(lblNewLabel_13);
 
-		JLabel lblNewLabel_14 = new JLabel("Publisher");
-		lblNewLabel_14.setBounds(29, 114, 46, 14);
+		JLabel lblNewLabel_14 = new JLabel("Publisher ID ");
+		lblNewLabel_14.setBounds(29, 140, 101, 14);
 		absentPanel.add(lblNewLabel_14);
 
 		JLabel lblNewLabel_15 = new JLabel("Price");
-		lblNewLabel_15.setBounds(29, 192, 46, 14);
+		lblNewLabel_15.setBounds(29, 213, 46, 14);
 		absentPanel.add(lblNewLabel_15);
 
 		JLabel lblNewLabel_16 = new JLabel("Image file location");
-		lblNewLabel_16.setBounds(29, 153, 101, 14);
+		lblNewLabel_16.setBounds(29, 176, 127, 14);
 		absentPanel.add(lblNewLabel_16);
 
-		JLabel lblNewLabel_18 = new JLabel("Inventory Level");
-		lblNewLabel_18.setBounds(359, 192, 89, 14);
+		JLabel lblNewLabel_18 = new JLabel("Threshold");
+		lblNewLabel_18.setBounds(399, 213, 106, 14);
 		absentPanel.add(lblNewLabel_18);
 
 		JLabel lblNewLabel_19 = new JLabel("Rack number ");
-		lblNewLabel_19.setBounds(359, 114, 73, 14);
+		lblNewLabel_19.setBounds(397, 140, 103, 14);
 		absentPanel.add(lblNewLabel_19);
 
 		JLabel lblNewLabel_20 = new JLabel("Number of copies");
-		lblNewLabel_20.setBounds(359, 150, 89, 14);
+		lblNewLabel_20.setBounds(399, 176, 101, 14);
 		absentPanel.add(lblNewLabel_20);
 
 		txtBookTitle = new JTextField();
-		txtBookTitle.setBounds(141, 33, 194, 20);
+		txtBookTitle.setBounds(166, 54, 194, 20);
 		absentPanel.add(txtBookTitle);
 		txtBookTitle.setColumns(10);
 
 		txtAuthorName = new JTextField();
-		txtAuthorName.setBounds(141, 69, 194, 20);
+		txtAuthorName.setBounds(166, 96, 194, 20);
 		absentPanel.add(txtAuthorName);
 		txtAuthorName.setColumns(10);
 
 		txtPublisher = new JTextField();
-		txtPublisher.setBounds(141, 111, 187, 20);
+		txtPublisher.setBounds(166, 137, 194, 20);
 		absentPanel.add(txtPublisher);
 		txtPublisher.setColumns(10);
 
 		textField_10 = new JTextField();
-		textField_10.setBounds(141, 189, 38, 20);
+		textField_10.setBounds(166, 210, 38, 20);
 		absentPanel.add(textField_10);
 		textField_10.setColumns(10);
 
 		textField_11 = new JTextField();
-		textField_11.setBounds(140, 150, 86, 20);
+		textField_11.setBounds(166, 173, 194, 20);
 		absentPanel.add(textField_11);
 		textField_11.setColumns(10);
 
 		textField_12 = new JTextField();
-		textField_12.setBounds(464, 111, 46, 20);
+		textField_12.setBounds(510, 137, 46, 20);
 		absentPanel.add(textField_12);
 		textField_12.setColumns(10);
 
 		textField_13 = new JTextField();
-		textField_13.setBounds(464, 147, 46, 20);
+		textField_13.setBounds(510, 173, 46, 20);
 		absentPanel.add(textField_13);
 		textField_13.setColumns(10);
 
 		textField_14 = new JTextField();
-		textField_14.setBounds(464, 189, 46, 20);
+		textField_14.setBounds(510, 210, 46, 20);
 		absentPanel.add(textField_14);
 		textField_14.setColumns(10);
+
+		JLabel lblAverageNumberOf = new JLabel("Average number of days required to procure ");
+		lblAverageNumberOf.setBounds(29, 242, 286, 14);
+		absentPanel.add(lblAverageNumberOf);
+
+		textField_22 = new JTextField();
+		textField_22.setBounds(314, 238, 46, 20);
+		absentPanel.add(textField_22);
+		textField_22.setColumns(10);
 
 		JPanel presentPanel = new JPanel();
 		presentPanel.setBounds(105, 151, 439, 94);
@@ -642,8 +614,9 @@ public class Interface_new {
 		generalPanel.add(btnLogOut_1);
 
 		JPanel newPublisherPanel = new JPanel();
-		
+
 		JButton btnSaveChanges = new JButton("Save changes");
+
 		btnSaveChanges.setBounds(254, 399, 134, 23);
 		generalPanel.add(btnSaveChanges);
 
@@ -778,8 +751,6 @@ public class Interface_new {
 		btnSaveChanges_2.setBounds(295, 338, 110, 23);
 		newVendorPanel.add(btnSaveChanges_2);
 
-		
-		
 		JPanel managerPanel = new JPanel();
 		Employee.add(managerPanel, "name_23429361542622");
 		managerPanel.setLayout(null);
@@ -796,7 +767,6 @@ public class Interface_new {
 		btnLogOut_2.setBounds(580, 11, 89, 23);
 		managerPanel.add(btnLogOut_2);
 
-				
 		JButton generate = new JButton("Generate receipt");
 		generate.setBounds(266, 289, 129, 23);
 		managerPanel.add(generate);
@@ -830,8 +800,7 @@ public class Interface_new {
 		JButton btnNext = new JButton("Next book ->");
 		btnNext.setBounds(471, 364, 153, 23);
 		genreceiptPanel.add(btnNext);
-		
-		
+
 		JButton btnGenerateReceipt = new JButton("Generate Receipt");
 		btnGenerateReceipt.setBounds(288, 272, 129, 23);
 		genreceiptPanel.add(btnGenerateReceipt);
@@ -844,6 +813,17 @@ public class Interface_new {
 		textField_7.setBounds(351, 198, 38, 20);
 		genreceiptPanel.add(textField_7);
 		textField_7.setColumns(10);
+
+		JButton button_5 = new JButton("< Back");
+		button_5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				genreceiptPanel.setVisible(false);
+				salesclerkPanel.setVisible(true);
+			}
+		});
+		button_5.setBounds(10, 399, 89, 23);
+		genreceiptPanel.add(button_5);
 
 		Query.setVisible(true);
 		viewBook.setVisible(false);
@@ -863,34 +843,31 @@ public class Interface_new {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// hardcoding the login for now
-				//System.out.println(txtUsername.getText() + " " + passwordField.getText());
+				// System.out.println(txtUsername.getText() + " " +
+				// passwordField.getText());
 				if (txtUsername.getText().equals("manager") && passwordField.getText().equals("manager123")) {
 
 					// new SuccessDialog().invoke("Successful login as
 					// manager");
 					new ToastMessage("Successful login", 500).setVisible(true);
-					
+					;
 					loginPanel.setVisible(false);
 					managerPanel.setVisible(true);
 				} else if (txtUsername.getText().equals("salesclerk")
 						&& passwordField.getText().equals("salesclerk123")) {
-					new ToastMessage("Successful login", 500).setVisible(true);
-					cart=new Cart();
+					new SuccessDialog().invoke("Successful login as sales clerk");
 					loginPanel.setVisible(false);
 					genreceiptPanel.setVisible(true);
 				} else if (passwordField.getText().equals("emp123") && (txtUsername.getText().equals("emp1")
 						|| txtUsername.getText().equals("emp2") || txtUsername.getText().equals("emp3"))) {
-					new ToastMessage("Successful login", 500).setVisible(true);
+					new SuccessDialog().invoke("Successful login as employee");
 					loginPanel.setVisible(false);
 					generalPanel.setVisible(true);
-				} 
-				else if(passwordField.getText().equals("owner123") && txtUsername.getText().equals("owner"))
-				{
-					new ToastMessage("Successful login", 500).setVisible(true);
+				} else if (passwordField.getText().equals("owner123") && txtUsername.getText().equals("owner")) {
+					new SuccessDialog().invoke("Successful login as owner");
 					loginPanel.setVisible(false);
 					ownerPanel.setVisible(true);
-				}
-				else {
+				} else {
 					new ErrorDialog().invoke("Incorrect credentials");
 					passwordField.setText("");
 				}
@@ -916,28 +893,6 @@ public class Interface_new {
 			}
 		});
 
-		btnFind.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				try {
-					Integer ISBN = Integer.valueOf(textField_6.getText().toString());
-					if (new BookDao().doesBookExist(ISBN)) {
-						new SuccessDialog().invoke("Book exists");
-						// TODO fill details now
-						// LATEST TODO
-						txtBookTitle.setText(new BookDao().getBookByISBN(ISBN).getBookTitle());
-					} else {
-						new ErrorDialog().invoke("This book isn't registered in database! Please register");
-					}
-				} catch (Exception e1) {
-					new ErrorDialog().invoke("Your request could not be processed");
-				}
-
-			}
-		});
-
 		btnSearch.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -959,13 +914,13 @@ public class Interface_new {
 						}
 						return;
 					}
-					
+
 					model.removeAllElements();
 					for (Book b : bookList) {
 						model.addElement(capitalizeFirstLetter(b.getBookTitle().toLowerCase()) + "   by "
 								+ capitalizeFirstLetter(b.getAuthorName().toLowerCase()) + "   ISBN :" + b.getISBN());
 					}
-					
+
 				} catch (Exception e) {
 					return;
 				}
@@ -999,7 +954,6 @@ public class Interface_new {
 							Query.setVisible(false);
 							orderBookPanel.setVisible(true);
 						}
-						
 
 					}
 				} catch (Exception e) {
@@ -1009,31 +963,27 @@ public class Interface_new {
 		});
 
 		button_2.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				try
-				{
-					java.util.Date toDate=dateChooser_1.getDate();
-					java.util.Date fromDate=dateChooser.getDate();
-					if(toDate==null || fromDate==null)
+				try {
+					java.util.Date toDate = dateChooser_1.getDate();
+					java.util.Date fromDate = dateChooser.getDate();
+					if (toDate == null || fromDate == null)
 						throw new Exception();
-					else
-					{
-						
+					else {
+
 					}
-				}
-				catch(Exception e2)
-				{
+				} catch (Exception e2) {
 					return;
 				}
-				
+
 			}
 		});
-	
-		//back button of the payment panel
-	
+
+		// back button of the payment panel
+
 		button_1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -1041,10 +991,9 @@ public class Interface_new {
 				Query.setVisible(true);
 			}
 		});
-		
-		
+
 		btnLogOut_3.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -1054,9 +1003,9 @@ public class Interface_new {
 				passwordField.setText("");
 			}
 		});
-		
+
 		btnLogOut.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -1066,9 +1015,9 @@ public class Interface_new {
 				passwordField.setText("");
 			}
 		});
-		
+
 		btnLogOut_1.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -1078,9 +1027,9 @@ public class Interface_new {
 				passwordField.setText("");
 			}
 		});
-		
+
 		btnLogOut_2.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -1089,66 +1038,161 @@ public class Interface_new {
 				txtUsername.setText("");
 				passwordField.setText("");
 			}
-			
+
 		});
 
-		//get statistics button of the sales dao
-	button_2.addActionListener(new ActionListener() {
-		
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			if(dateChooser.getDate()==null || dateChooser_1.getDate()==null)
-			{
-				new ErrorDialog().invoke("Please enter the values");
-				return;
-			}
-			else
-			{
-				String resultString=new TransactionDao().getStatistics(dateChooser.getDate(),dateChooser_1.getDate());
-				statisticsArea.setText(resultString);
-				SimpleDateFormat sdf=new SimpleDateFormat("dd-MMM-yyyy");
-				lblNewLabel_9.setText(sdf.format(dateChooser.getDate()));
-				lblNewLabel_10.setText(sdf.format(dateChooser_1.getDate()));
-				
-				ownerPanel.setVisible(false);
-				statisticsPanel.setVisible(true);
-			}
-		}
-	});	
-	//bhagwat
-	btnSaveChanges_2.addActionListener(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			Vendor newvendor = new Vendor();
-			if (textField_18.getText().trim().equals("") || textField_19.getText().trim().equals("")
-					|| textField_20.getText().trim().equals("") || textField_21.getText().trim().equals("")) {
-				JOptionPane.showMessageDialog(window, "All fields are mandatory");
-			}
+		btnSaveChanges_1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Publisher newpub = new Publisher();
+				if (textField_8.getText().trim().equals("") || textField_9.getText().trim().equals("")
+						|| textField_17.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(window, "All fields are mandatory");
+				}
 
-			try {
-				newvendor.setVendorId(Integer.parseInt(textField_18.getText()));
-			} catch (Exception e1) {
-				new ErrorDialog().invoke("Please enter proper details!!");
-				e1.printStackTrace();
+				try {
+					newpub.setPublisherId(Integer.parseInt(textField_8.getText()));
+					Integer id1 = Integer.parseInt(textField_8.getText());
+					VendorDao vd = new VendorDao();
+					Vendor vendor1 = vd.getVendorById(id1);
+					if (vendor1 == null) {
+						JOptionPane.showMessageDialog(window,
+								"This vendor doesn't already exist. Redirecting to add new vendor...");
+						newPublisherPanel.setVisible(false);
+						newVendorPanel.setVisible(true);
+						textField_18.setText("");
+						textField_19.setText("");
+						textField_20.setText("");
+						textField_21.setText("");
+
+					}
+					newpub.setVendor(vendor1);
+
+				} catch (Exception e1) {
+					new ErrorDialog().invoke("Please enter proper details!!");
+					e1.printStackTrace();
+				}
+
+				newpub.setPublisherName(textField_9.getText());
+				PublisherDao pd = new PublisherDao();
+				pd.addPublisher(newpub);
 			}
-			newvendor.setVendorName(textField_19.getText());
-			newvendor.setVendorAddress(textField_20.getText());
-			newvendor.setVendorEmail(textField_21.getText());
+		});
 
-			VendorDao vd = new VendorDao();
-			vd.addVendor(newvendor);
+		btnSaveChanges.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (absentPanel.isVisible()) {
 
-			newVendorPanel.setVisible(false);
-			newPublisherPanel.setVisible(true);
-		}
-	});
+					Book newbook = new Book();
+					if (txtBookTitle.getText().trim().equals("") || txtAuthorName.getText().trim().equals("")
+							|| txtPublisher.getText().trim().equals("") || textField_11.getText().trim().equals("")
+							|| textField_10.getText().trim().equals("") || textField_12.getText().trim().equals("")
+							|| textField_13.getText().trim().equals("") || textField_14.getText().trim().equals("")
+							|| textField_22.getText().trim().equals("")) {
+						JOptionPane.showMessageDialog(window, "All fields are mandatory");
+					}
+					Integer nOC = 0;
+					try {
+						newbook.setPrice(Integer.parseInt(textField_10.getText()));
+						newbook.setRackNo(Integer.parseInt(textField_12.getText()));
+						nOC = Integer.parseInt(textField_13.getText());
+						newbook.setNoOfCopies(nOC);
+						newbook.setThreshold(Integer.parseInt(textField_14.getText()));
+						newbook.setAverageDays(Integer.parseInt(textField_22.getText()));
 
-}
-		
-	
-	
-	
+						Integer id1 = Integer.parseInt(txtPublisher.getText());
+						PublisherDao pd = new PublisherDao();
+						Publisher pub1 = pd.getPublisherById(id1);
+						if (pub1 == null) {
+							JOptionPane.showMessageDialog(window,
+									"This publisher isn't already a part of the database. Redirecting to add new vendor...");
+							newPublisherPanel.setVisible(true);
+							generalPanel.setVisible(false);
+						}
+						newbook.setPublisher(pub1);
+
+					} catch (Exception e1) {
+						new ErrorDialog().invoke("Please enter proper details!!");
+						e1.printStackTrace();
+					}
+
+					newbook.setBookTitle(txtBookTitle.getText());
+					newbook.setAuthorName(txtAuthorName.getText());
+					newbook.setImageFileName(textField_11.getText());
+
+					BookDao bd = new BookDao();
+					bd.addBook(newbook, nOC);
+
+				} else if (presentPanel.isVisible()) {
+					BookDao bd = new BookDao();
+					bd.addBook((bd.getBookByISBN(Integer.valueOf(textField_6.getText()))),
+							Integer.valueOf(textField_15.getText()));
+				}
+
+			}
+		});
+
+		btnFind.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				try {
+					Integer ISBN = Integer.valueOf(textField_6.getText());
+					if (new BookDao().doesBookExist(ISBN)) {
+						// new SuccessDialog().invoke("Book exists");
+						presentPanel.setVisible(true);
+
+					} else {
+						// new ErrorDialog().invoke("This book isn't registered
+						// in database! Please register");
+						absentPanel.setVisible(true);
+						textField_10.setText("");
+						textField_12.setText("");
+						textField_13.setText("");
+						textField_14.setText("");
+						textField_22.setText("");
+						textField_8.setText("");
+						txtBookTitle.setText("");
+						txtAuthorName.setText("");
+						textField_11.setText("");
+
+					}
+				} catch (Exception e1) {
+					new ErrorDialog().invoke("Your request could not be processed");
+				}
+
+			}
+		});
+
+		btnSaveChanges_2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Vendor newvendor = new Vendor();
+				if (textField_18.getText().trim().equals("") || textField_19.getText().trim().equals("")
+						|| textField_20.getText().trim().equals("") || textField_21.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(window, "All fields are mandatory");
+				}
+
+				try {
+					newvendor.setVendorId(Integer.parseInt(textField_18.getText()));
+				} catch (Exception e1) {
+					new ErrorDialog().invoke("Please enter proper details!!");
+					e1.printStackTrace();
+				}
+				newvendor.setVendorName(textField_19.getText());
+				newvendor.setVendorAddress(textField_20.getText());
+				newvendor.setVendorEmail(textField_21.getText());
+
+				VendorDao vd = new VendorDao();
+				vd.addVendor(newvendor);
+
+				newVendorPanel.setVisible(false);
+				newPublisherPanel.setVisible(true);
+			}
+		});
+
+	}
 
 	// AUXILIARY FUNCTION FOR PRETTY PRINTING
 	public static String capitalizeFirstLetter(String original) {
@@ -1158,25 +1202,20 @@ public class Interface_new {
 		return original.substring(0, 1).toUpperCase() + original.substring(1);
 	}
 
-
-	
-	
-	
-	
 	public static void main(String[] args) {
-		
-		 /* Book book = new Book(); book.setBookTitle("algo");
-		  book.setAuthorName("bhagwat"); book.setISBN(1);
-		  
-		  Book book2 = new Book(); book2.setBookTitle("algo");
-		  book2.setAuthorName("cormen"); book2.setISBN(2);
-		  
-		  BookDao dao1 = new BookDao(); dao1.addBook(book, 5);
-		  
-		  dao1.addBook(book2, 6);*/
-		 
-		
-		Book book1=new Book();
+		/*
+		 * Book book1 = new Book(); book1.setBookTitle("algo");
+		 * book1.setAuthorName("bhagwat"); book1.setISBN(1);
+		 * 
+		 * Book book2 = new Book(); book2.setBookTitle("algo");
+		 * book2.setAuthorName("cormen"); book2.setISBN(2);
+		 * 
+		 * BookDao dao1 = new BookDao(); dao1.addBook(book1, 5);
+		 * 
+		 * dao1.addBook(book2, 6);
+		 */
+
+		Book book1 = new Book();
 		book1.setISBN(11223);
 		book1.setNoOfCopies(0);
 		book1.setBookTitle("Hey");
@@ -1185,9 +1224,8 @@ public class Interface_new {
 		book1.setRackNo(12);
 		book1.setThreshold(12);
 		book1.setAverageDays(12);
-		//new BookDao().addBook(book1, 0);
+		// new BookDao().addBook(book1, 0);
 
-		
 		application();
 	}
 }

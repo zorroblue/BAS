@@ -45,9 +45,12 @@ public class BookDao {
 			if(session.getTransaction()!=null)
 				session.getTransaction().rollback();
 			e.printStackTrace();
+		
+		}
+		finally
+		{
 			session.close();
 		}
-	
 	}
 	
 	public void deleteBook(Integer ISBN)
@@ -109,6 +112,7 @@ public class BookDao {
 		Query query=session.createQuery("from Book where authorName = :authorname");
 		query.setString("authorname", authorName.toUpperCase());
 		List<Book> bookList=(List<Book>)query.list();
+		session.close();
 		return bookList;
 		
 	}
@@ -120,6 +124,7 @@ public class BookDao {
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class, ISBN);
+		session.close();
 		if(book==null)
 		{
 			return false;
@@ -134,6 +139,7 @@ public class BookDao {
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class, ISBN);
+		session.close();
 		return book;
 	}
 	
@@ -157,6 +163,9 @@ public class BookDao {
 				session.getTransaction().rollback();
 			e.printStackTrace();
 		}
-
+		finally
+		{
+			session.close();
+		}
 	}
 }

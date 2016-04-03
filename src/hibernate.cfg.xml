@@ -20,9 +20,7 @@
 		<mapping resource="model/Vendor.hbm.xml"/>
 		<mapping resource="model/Publisher.hbm.xml"/>
 		<mapping resource="model/Book.hbm.xml"></mapping>
-		<mapping resource="model/SalesDay.hbm.xml"></mapping>
 		<mapping resource="model/NotInCollection.hbm.xml"/> 
-		<mapping resource="model/SalesDayItem.hbm.xml"/>
 		<mapping resource="model/Transaction.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
