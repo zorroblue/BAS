@@ -15,6 +15,7 @@ import views.SuccessDialog;
 //Manages the basic CRUD operations on the Book table
 public class BookDao {
 	
+	//add quantity number of books to the inventory
 	public void addBook(Book thebook,Integer quantity)
 	{
 		Configuration configuration=new Configuration().configure();
@@ -44,12 +45,9 @@ public class BookDao {
 			if(session.getTransaction()!=null)
 				session.getTransaction().rollback();
 			e.printStackTrace();
-		}
-		finally
-		{
 			session.close();
 		}
-		
+	
 	}
 	
 	public void deleteBook(Integer ISBN)
@@ -97,6 +95,7 @@ public class BookDao {
 		Query query=session.createQuery("from Book where bookTitle = :thetitle");
 		query.setString("thetitle",title);
 		List<Book> bookList=(List<Book>)query.list();
+		session.close();
 		return bookList;
 
 	}
@@ -136,5 +135,28 @@ public class BookDao {
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class, ISBN);
 		return book;
+	}
+	
+	public void updateRequests(Book thebook)
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		try
+		{
+		Book book=(Book)session.get(Book.class, thebook.getISBN());
+		book.setNoOfRequests(book.getNoOfCopies()+1);
+		session.update(book);
+		session.getTransaction().commit();
+	
+		}
+		catch(Exception e)
+		{
+			if(session.getTransaction()!=null)
+				session.getTransaction().rollback();
+			e.printStackTrace();
+		}
+
 	}
 }

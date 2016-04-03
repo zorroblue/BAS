@@ -17,7 +17,7 @@
 	<property name="noOfRequests" column="noOfRequests"></property>
 	<property name="imageFileName" column="imageFileName"></property>
 	<property name="threshold" column="threshold"></property>
-	<many-to-one name="publisher" class="Publisher" column="publisher_id" unique="true"></many-to-one>
+	<many-to-one name="publisher" class="Publisher" column="publisher_id" unique="true" ></many-to-one>
 	</class>
 	
 </hibernate-mapping>

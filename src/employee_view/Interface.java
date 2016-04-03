@@ -586,11 +586,17 @@ public class Interface {
 					loginPanel.setVisible(false);
 					salesclerkPanel.setVisible(true);
 				}
-				else if(passwordField.getText().equals("user123") && (txtUsername.getText().equals("emp1") || txtUsername.getText().equals("emp2") || txtUsername.getText().equals("emp3")))
+				else if(passwordField.getText().equals("emp123") && (txtUsername.getText().equals("emp1") || txtUsername.getText().equals("emp2") || txtUsername.getText().equals("emp3")))
 				{
 					new SuccessDialog().invoke("Successful login as employee");
 					loginPanel.setVisible(false);
 					generalPanel.setVisible(true);
+				}
+				else if(passwordField.getText().equals("owner123") && txtUsername.getText().equals("owner"))
+				{
+					new SuccessDialog().invoke("Successful login as owner");
+					loginPanel.setVisible(false);
+					ownerPanel.setVisible(true);
 				}
 				else
 				{
@@ -632,6 +638,7 @@ public class Interface {
 					if(new BookDao().doesBookExist(ISBN))
 					{
 						new SuccessDialog().invoke("Book exists");
+						
 						//TODO fill details now
 						//LATEST TODO
 						txtBookTitle.setText(new BookDao().getBookByISBN(ISBN).getBookTitle());
@@ -750,6 +757,8 @@ public class Interface {
 		}
 	});
 
+	
+	
 
 	}
 	public static void main(String[] args) 
