@@ -29,6 +29,9 @@ public class BookDao {
 			Book book=(Book)session.get(Book.class, ISBN);
 			if(book==null) //no book exists
 			{
+				//check if the book has been requested in notInCollection
+				new NotInCollectionDao().removeRequest(ISBN);
+				
 				thebook.setNoOfCopies(quantity);
 				session.save(thebook);
 				session.getTransaction().commit();
@@ -43,10 +46,8 @@ public class BookDao {
 			book.setNoOfCopies(book.getNoOfCopies()+quantity);
 			if(quantity>0)
 			{
-				if(book.getNoOfRequests()<quantity)
-					book.setNoOfRequests(0);
-				else
-					book.setNoOfRequests(book.getNoOfRequests()-quantity);
+				//we have got new copies of the same
+				book.setNoOfRequests(0);
 			}
 			session.update(book);
 			session.getTransaction().commit();
@@ -206,4 +207,5 @@ public class BookDao {
 		
 		return null;
 	}
+
 }

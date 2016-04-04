@@ -17,9 +17,9 @@ alter table book add idx INT(5) default null;
 
 alter table book add sales_id int(5) default null;
 
-create table not_in_collection( book_id INT(5) NOT NULL, noOfRequests INT(5) DEFAULT NULL, bookTitle varchar(40) default null , authorName varchar(40) default null, publisherName varchar(40) default null, ISBNCode int(20) default null); 
 
-create table transaction ( transactionId INT(5) NOT NULL AUTO_INCREMENT, bookISBN INT(20) NOT NULL, noOfCopies INT(5) NOT NULL, dateOfTransaction VARCHAR(40), primary key(transactionId) );
+ create table transaction ( transactionId INT(5) NOT NULL AUTO_INCREMENT, bookISBN INT(20) NOT NULL, noOfCopies INT(5) NOT NULL, dateOfTransaction Date , primary key(transactionId) );
+
 
 
 

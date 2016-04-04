@@ -103,7 +103,7 @@ public class ReportWriter {
 	{
 		 cb.beginText();
 		  cb.setFontAndSize(bfBold, 12);
-		  cb.showTextAligned(PdfContentByte.ALIGN_CENTER,new String("Total price= "+price.toString()), 300 , 25, 0);
+		  cb.showTextAligned(PdfContentByte.ALIGN_CENTER,new String("Total price= Rs."+price.toString()), 300 , 25, 0);
 		  cb.endText();
 	}
 	

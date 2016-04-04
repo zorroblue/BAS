@@ -4,12 +4,12 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
 <hibernate-mapping package="model">
-<class name="NotInCollection" table="not_in_collection">
+<class name="NotInCollection" table="notInCollection">
 	<id name="requestId" column="request_id">
 	<generator class="native"></generator>
 	</id>
 	<property name="noOfRequests" column="noOfRequests"></property>
-	<property name="bookTitle" column="bookColumn"></property>
+	<property name="bookTitle" column="bookTitle"></property>
 	<property name="authorName" column="authorName"></property>
 	<property name="publisherName" column="publisherName"></property>
 	<property name="ISBNCode" column="ISBNCode"></property>

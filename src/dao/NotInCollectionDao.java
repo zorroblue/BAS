@@ -24,15 +24,18 @@ public class NotInCollectionDao {
 			//check if the book has already been requested for before
 			Query newQuery=session.createQuery("from NotInCollection where ISBNCode = :isbn");
 			newQuery.setParameter("isbn", request.getISBNCode());
-			NotInCollection req=(NotInCollection)newQuery.list();
-			if(req==null)
+			List<NotInCollection> req=newQuery.list();
+			if(req==null || req.isEmpty())
 			{
 				session.save(request);
 			}
 			else
 			{
-				req.setNoOfRequests(req.getNoOfRequests()+1);
-				session.update(req);
+				for(NotInCollection r : req)
+				{
+					r.setNoOfRequests(r.getNoOfRequests()+1);
+					session.update(r);
+				}
 			}
 			session.getTransaction().commit();
 		}
@@ -59,7 +62,11 @@ public class NotInCollectionDao {
 		{
 			Query query=session.createQuery("from NotInCollection WHERE ISBNCode= :isbn");
 			query.setParameter("isbn", ISBN);
-			NotInCollection request=(NotInCollection)query.list();
+			List<NotInCollection> request=query.list();
+			for(NotInCollection c: request)
+			{
+				session.delete(c);
+			}
 		}
 		catch(Exception e)
 		{
@@ -83,7 +90,7 @@ public class NotInCollectionDao {
 		{
 			Query query=session.createQuery("from NotInCollection order by noOfRequests desc");
 			list=query.list();
-			session.close();
+			//session.close();
 			return list;
 		}
 		catch(Exception e)
@@ -98,4 +105,5 @@ public class NotInCollectionDao {
 		return null;
 	}
 
+	
 }

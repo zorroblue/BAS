@@ -5,7 +5,6 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -24,20 +23,22 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import com.itextpdf.text.DocumentException;
 import com.toedter.calendar.JDateChooser;
 
 import dao.BookDao;
+import dao.NotInCollectionDao;
 import dao.PublisherDao;
 import dao.TransactionDao;
 import dao.VendorDao;
 import model.Book;
 import model.Cart;
 import model.CartItem;
+import model.NotInCollection;
 import model.Publisher;
 import model.Vendor;
 import pdfwriter.ReportWriter;
 import views.ErrorDialog;
+import views.Query;
 import views.SuccessDialog;
 import views.ToastMessage;
 
@@ -78,7 +79,7 @@ public class Interface_new {
 	public static void application() {
 		JFrame window = new JFrame("Book Shop Automation");
 		window.setVisible(true);
-
+		cart=new Cart();
 		window.setSize(700, 500);
 		// window.setResizable(false);
 
@@ -245,6 +246,8 @@ public class Interface_new {
 		JButton btnPlaceOrder = new JButton("Place order");
 		btnPlaceOrder.setBounds(259, 312, 104, 23);
 		orderBookPanel.add(btnPlaceOrder);
+		
+	
 
 		JLabel lblIsbn_3 = new JLabel("ISBN : ");
 		lblIsbn_3.setBounds(154, 266, 46, 14);
@@ -748,20 +751,7 @@ public class Interface_new {
 		btnViewRequests.setBounds(266, 229, 129, 23);
 		managerPanel.add(btnViewRequests);
 		
-		btnViewRequests.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				requestsTextArea.setText("");
-				requestsPanel.setVisible(true);
-				managerPanel.setVisible(false);
-				//get the not in collection requests
-				
-				
-			}
-		});
-
+		
 		JButton btnUpdateDatabase = new JButton("Update database");
 		btnUpdateDatabase.setBounds(266, 179, 129, 23);
 		managerPanel.add(btnUpdateDatabase);
@@ -774,7 +764,15 @@ public class Interface_new {
 		JButton generate = new JButton("Generate receipt");
 		generate.setBounds(266, 289, 129, 23);
 		managerPanel.add(generate);
+		
+		
+		
+		JButton btnViewNotInStock = new JButton("View not in stock requests");
+		btnViewNotInStock.setBounds(266, 338, 129, 25);
+		managerPanel.add(btnViewNotInStock);
 		// Owner.setLayout(null);
+		
+		
 
 		JPanel genreceiptPanel = new JPanel();
 		Employee.add(genreceiptPanel, "name_23371904062736");
@@ -892,7 +890,7 @@ public class Interface_new {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(cart.getCart()==null || cart.getCart().isEmpty())
+				if(cart!=null && (cart.getCart()==null || cart.getCart().isEmpty()))
 				{
 					new ErrorDialog().invoke("There is nothing for transaction");
 					return;
@@ -1372,11 +1370,12 @@ public class Interface_new {
 						//JOptionPane.showMessageDialog(window, model.get(choice));
 						String isbn = "";
 						String s = model.get(choice);
-						for (int i = 0; i < s.length(); i++) {
+						/*for (int i = 0; i < s.length(); i++) {
 							Character c = s.charAt(i);
 							if (Character.isDigit(c))
 								isbn = isbn + c.toString();
-						}
+						}*/
+						 isbn=(s.substring(s.lastIndexOf(":") + 1)); //rameshwar123
 						BookDao dao1 = new BookDao();
 						Book thisBook;
 						try
@@ -1421,9 +1420,125 @@ public class Interface_new {
 			ownerPanel.setVisible(true);
 		}
 	});
+	
+	//rameshwar123
+	btnPlaceOrder.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(textField_16.getText().equals("")|| textField_2.getText().equals("")||textField_3.getText().equals("")||textField_4.getText().equals(""))
+			{
+				new ErrorDialog().invoke("Please enter all values for order");
+				return;
+			}
+			NotInCollection c=new NotInCollection();
+			try
+			{
+				c.setISBNCode(Integer.parseInt(textField_16.getText()));
+			}
+			catch(Exception e1212)
+			{
+				new ErrorDialog().invoke("ISBN code must be valid!");
+				return;
+			}
+			
+			c.setAuthorName(textField_3.getText());
+			c.setBookTitle(textField_2.getText());
+			c.setPublisherName(textField_4.getText());
+			c.setNoOfRequests(c.getNoOfRequests()+1);
+			
+			//rameshwar123
+			if(new BookDao().doesBookExist(c.getISBNCode()))
+			{
+				new ErrorDialog().invoke("Book of this ISBN code are present in the database. Kindly check query or retry!!");
+				return;
+			}
+			
+			new NotInCollectionDao().addRequest(c);
+			
+			textField_4.setText("");
+			textField_3.setText("");
+			textField_2.setText("");
+			textField_16.setText("");
+			
+			new ToastMessage("Order was successfully placed", 750);
+			orderBookPanel.setVisible(false);
+			Query.setVisible(true);
+			
+			
+		}
+	});
+	
+	//back button in requests view
+	
+	button_3.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			requestsPanel.setVisible(false);
+			managerPanel.setVisible(true);
+		}
+	});
+	
+	//not in collection requests
+			btnViewRequests.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					requestsTextArea.setText("");
+					requestsPanel.setVisible(true);
+					managerPanel.setVisible(false);
+					
+					//get the not in collection requests
+					List<NotInCollection> list=new NotInCollectionDao().viewRequests();
+					StringBuilder stringBuilder=new StringBuilder("REQUESTS\n\n");
+					int i=1;
+					for(NotInCollection c: list)
+					{
+						stringBuilder.append(i+". ISBN Code: "+c.getISBNCode()+"\n   Book Title: "+c.getBookTitle()+"\n  Author Name:"+c.getAuthorName()+"\n  Publisher Name: "+c.getPublisherName());
+						stringBuilder.append("\n\n");
+						i++;
+					}
+					requestsTextArea.setText(stringBuilder.toString());
+				}
+			});
+
+			btnViewNotInStock.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					List<Book> result=new BookDao().getRequests();
+					StringBuilder stringBuilder=new StringBuilder("");
+					int i=1;
+					for(Book b:result)
+					{
+						stringBuilder.append(i+". ISBN Code: "+b.getISBN()+"\n   Book title: "+b.getBookTitle()+"\n Author Name: "+b.getAuthorName()+"\n\n");
+					}
+					managerPanel.setVisible(false);
+					requestsTextArea.setText(stringBuilder.toString());
+					requestsPanel.setVisible(true);
+				}
+			});
+			
+			generate.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					managerPanel.setVisible(false);
+					if(cart!=null && cart.getCart()!=null && cart.getCart().isEmpty())
+						cart.getCart().clear();
+					genreceiptPanel.setVisible(true);
+					
+				}
+			});
 }
 
-	
+
 	
 	
 
