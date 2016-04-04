@@ -157,11 +157,10 @@ public class BookDao {
 		session.beginTransaction();
 		try
 		{
-		Book book=(Book)session.get(Book.class, thebook.getISBN());
-		book.setNoOfRequests(book.getNoOfCopies()+1);
-		session.update(book);
-		session.getTransaction().commit();
-	
+			Book book=(Book)session.get(Book.class, thebook.getISBN());
+			book.setNoOfRequests(book.getNoOfCopies()+1);
+			session.update(book);
+			session.getTransaction().commit();
 		}
 		catch(Exception e)
 		{
@@ -173,5 +172,32 @@ public class BookDao {
 		{
 			session.close();
 		}
+	}
+	
+	public List<Book> getRequests()
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		try
+		{
+			Query query=session.createQuery("from Book b where b.noOfRequests>0 order by b.noOfRequests desc");
+			List<Book> list=query.list();
+			return list;
+		}
+		catch(Exception e)
+		{
+			if(session.getTransaction()!=null)
+				session.getTransaction().rollback();
+			e.printStackTrace();
+		
+		}
+		finally
+		{
+			session.close();
+		}
+		
+		return null;
 	}
 }

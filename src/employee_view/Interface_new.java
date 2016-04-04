@@ -328,63 +328,7 @@ public class Interface_new {
 		Query.add(queryBookList);
 
 		
-		//CHANGE MADE BY RAMESHWAR
-		btnViewSelectedBook.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				if (queryBookList.isSelectionEmpty() && queryBookList.getModel().getSize() != 0)
-					JOptionPane.showMessageDialog(window, "Select one of the above books to view by clicking");
-				else if (queryBookList.getModel().getSize() == 0)
-				{
-					JOptionPane.showMessageDialog(window, "No books available to view");
-				}
-				else {
-					int choice = queryBookList.getSelectedIndex();
-					//JOptionPane.showMessageDialog(window, choice);
-					
-					
-					Query.setVisible(false);
-					viewBook.setVisible(true);
-					//JOptionPane.showMessageDialog(window, model.get(choice));
-					String isbn = "";
-					String s = model.get(choice);
-					for (int i = 0; i < s.length(); i++) {
-						Character c = s.charAt(i);
-						if (Character.isDigit(c))
-							isbn = isbn + c.toString();
-					}
-					BookDao dao1 = new BookDao();
-					Book thisBook;
-					try
-					{
-						thisBook = dao1.getBookByISBN(Integer.parseInt(isbn));
-					}
-					catch(Exception e12)
-					{
-						new ErrorDialog().invoke("Please enter a valid integer");
-						return;
-					}
-					//increment requests if book is not in Stock RAMESHWAR	
-					if(thisBook.getNoOfCopies()==0)
-					{
-						thisBook.setNoOfRequests(thisBook.getNoOfRequests()+1);
-						new BookDao().updateRequests(thisBook);
-						new ErrorDialog().invoke("The book is presently not in stock.The book will be available in 2-3 business days.");
-					}
-					
-					
-					lblNewLabel_1.setText(thisBook.getBookTitle());
-					mlblAName.setText(thisBook.getAuthorName());
-					lblNewLabel_2.setText(thisBook.getPrice().toString());
-					lblNewLabel_5.setText(thisBook.getRackNo().toString());
-					lblNewLabel_4.setText(thisBook.getISBN().toString());
-					lblNewLabel_3.setText(thisBook.getNoOfCopies().toString());
-
-				}
-
-			}
-		});
+		
 		
 		
 		//adding to the customer tab
@@ -1326,6 +1270,62 @@ public class Interface_new {
 			
 		}
 	});
+	
+	//CHANGE MADE BY RAMESHWAR
+			btnViewSelectedBook.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+
+					if (queryBookList.isSelectionEmpty() && queryBookList.getModel().getSize() != 0)
+						JOptionPane.showMessageDialog(window, "Select one of the above books to view by clicking");
+					else if (queryBookList.getModel().getSize() == 0)
+					{
+						JOptionPane.showMessageDialog(window, "No books available to view");
+					}
+					else {
+						int choice = queryBookList.getSelectedIndex();
+						//JOptionPane.showMessageDialog(window, choice);	
+						Query.setVisible(false);
+						viewBook.setVisible(true);
+						//JOptionPane.showMessageDialog(window, model.get(choice));
+						String isbn = "";
+						String s = model.get(choice);
+						for (int i = 0; i < s.length(); i++) {
+							Character c = s.charAt(i);
+							if (Character.isDigit(c))
+								isbn = isbn + c.toString();
+						}
+						BookDao dao1 = new BookDao();
+						Book thisBook;
+						try
+						{
+							thisBook = dao1.getBookByISBN(Integer.parseInt(isbn));
+						}
+						catch(Exception e12)
+						{
+							new ErrorDialog().invoke("Please enter a valid integer");
+							return;
+						}
+						//increment requests if book is not in Stock RAMESHWAR	
+						if(thisBook.getNoOfCopies()==0)
+						{
+							thisBook.setNoOfRequests(thisBook.getNoOfRequests()+1);
+							new BookDao().updateRequests(thisBook);
+							new ErrorDialog().invoke("The book is presently not in stock.The book will be available in 2-3 business days.");
+						}
+						
+						
+						lblNewLabel_1.setText(thisBook.getBookTitle());
+						mlblAName.setText(thisBook.getAuthorName());
+						lblNewLabel_2.setText(thisBook.getPrice().toString());
+						lblNewLabel_5.setText(thisBook.getRackNo().toString());
+						lblNewLabel_4.setText(thisBook.getISBN().toString());
+						lblNewLabel_3.setText(thisBook.getNoOfCopies().toString());
+
+					}
+
+				}
+			});
 
 	
 	btnSaveChanges_2.addActionListener(new ActionListener() {
