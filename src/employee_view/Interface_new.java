@@ -36,9 +36,9 @@ import model.CartItem;
 import model.NotInCollection;
 import model.Publisher;
 import model.Vendor;
+import pdfwriter.ReportViewer;
 import pdfwriter.ReportWriter;
 import views.ErrorDialog;
-import views.Query;
 import views.SuccessDialog;
 import views.ToastMessage;
 
@@ -898,6 +898,7 @@ public class Interface_new {
 
 				try {
 					new ReportWriter().createPDF(cart);
+					
 					//if success
 					//subtract the copies
 					for(CartItem b: cart.getCart())
@@ -906,6 +907,14 @@ public class Interface_new {
 						new BookDao().addBook(b.getBook(), -b.getQuantity());
 					}
 					//transaction complete
+					try
+					{
+						new ReportViewer().viewPdf();
+					}
+					catch(Exception e12121)
+					{
+						e12121.printStackTrace();
+					}
 				} 
 				catch(Exception e21)
 				{
