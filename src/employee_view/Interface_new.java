@@ -36,8 +36,7 @@ import model.Cart;
 import model.CartItem;
 import model.Publisher;
 import model.Vendor;
-import pdfwriter.PdfInvoicesBasic;
-import pdfwriter.ReceiptWriter;
+import pdfwriter.ReportWriter;
 import views.ErrorDialog;
 import views.SuccessDialog;
 import views.ToastMessage;
@@ -356,8 +355,16 @@ public class Interface_new {
 							isbn = isbn + c.toString();
 					}
 					BookDao dao1 = new BookDao();
-					Book thisBook = dao1.getBookByISBN(Integer.parseInt(isbn));
-
+					Book thisBook;
+					try
+					{
+						thisBook = dao1.getBookByISBN(Integer.parseInt(isbn));
+					}
+					catch(Exception e12)
+					{
+						new ErrorDialog().invoke("Please enter a valid integer");
+						return;
+					}
 					//increment requests if book is not in Stock RAMESHWAR	
 					if(thisBook.getNoOfCopies()==0)
 					{
@@ -456,10 +463,10 @@ public class Interface_new {
 		Employee.add(statisticsPanel, "name_177266559159994");
 		statisticsPanel.setLayout(null);
 
-		JButton btnVisualData = new JButton("Visual data");
+		/*JButton btnVisualData = new JButton("Visual data");
 		btnVisualData.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnVisualData.setBounds(569, 27, 97, 23);
-		statisticsPanel.add(btnVisualData);
+		statisticsPanel.add(btnVisualData);*/
 
 		JTextArea statisticsArea = new JTextArea();
 		statisticsArea.setBounds(132, 61, 445, 347);
@@ -484,6 +491,9 @@ public class Interface_new {
 		JButton button_4 = new JButton(" < Back");
 		button_4.setBounds(10, 398, 89, 23);
 		statisticsPanel.add(button_4);
+		
+		
+	
 
 		JPanel ownerPanel = new JPanel();
 		Employee.add(ownerPanel, "name_110106080647965");
@@ -930,9 +940,9 @@ public class Interface_new {
 					new ErrorDialog().invoke("There is nothing for transaction");
 					return;
 				}
-				
+
 				try {
-					new PdfInvoicesBasic().createPDF(cart);
+					new ReportWriter().createPDF(cart);
 					//if success
 					//subtract the copies
 					for(CartItem b: cart.getCart())
@@ -1216,6 +1226,7 @@ public class Interface_new {
 			}
 		}
 	});	
+	
 	//bhagwat
 	btnSaveChanges_1.addActionListener(new ActionListener() {
 		@Override
@@ -1303,10 +1314,16 @@ public class Interface_new {
 
 			} else if (presentPanel.isVisible()) {
 				BookDao bd = new BookDao();
-				bd.addBook((bd.getBookByISBN(Integer.valueOf(textField_6.getText()))),
-						Integer.valueOf(textField_15.getText()));
+				try
+				{
+					bd.addBook((bd.getBookByISBN(Integer.valueOf(textField_6.getText()))),Integer.valueOf(textField_15.getText()));
+				}
+				catch(Exception qw)
+				{
+					new ErrorDialog().invoke("Your request could not be processed");
+				}
 			}
-
+			
 		}
 	});
 
@@ -1338,6 +1355,16 @@ public class Interface_new {
 		}
 	});
 
+	//BACK BUTTON IN VIEW STATISTICS	
+	button_4.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			statisticsPanel.setVisible(false);
+			ownerPanel.setVisible(true);
+		}
+	});
 }
 		
 	

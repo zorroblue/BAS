@@ -35,6 +35,13 @@ public class BookDao {
 				return;
 			}
 			book.setNoOfCopies(book.getNoOfCopies()+quantity);
+			if(quantity>0)
+			{
+				if(book.getNoOfRequests()<quantity)
+					book.setNoOfRequests(0);
+				else
+					book.setNoOfRequests(book.getNoOfRequests()-quantity);
+			}
 			session.update(book);
 			session.getTransaction().commit();
 			//new SuccessDialog().invoke("Done!");

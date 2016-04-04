@@ -18,7 +18,7 @@ import model.Cart;
 import model.CartItem;
 import views.ErrorDialog;
 
-public class PdfInvoicesBasic {
+public class ReportWriter {
 
  private BaseFont bfBold;
  private BaseFont bf;
