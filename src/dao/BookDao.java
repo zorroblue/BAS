@@ -22,16 +22,22 @@ public class BookDao {
 		SessionFactory factory= configuration.buildSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
-		thebook.setNoOfCopies(quantity);
+		
 		try
 		{
 			Integer ISBN=thebook.getISBN();
 			Book book=(Book)session.get(Book.class, ISBN);
 			if(book==null) //no book exists
 			{
+				thebook.setNoOfCopies(quantity);
 				session.save(thebook);
 				session.getTransaction().commit();
-				session.close();
+		//		session.close();
+				return;
+			}
+			if(book.getNoOfCopies()+quantity<0)
+			{
+				new ErrorDialog().invoke("Request can't be processed");
 				return;
 			}
 			book.setNoOfCopies(book.getNoOfCopies()+quantity);

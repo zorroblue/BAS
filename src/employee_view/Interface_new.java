@@ -621,9 +621,9 @@ public class Interface_new {
 		lblTheFollowingBooks.setBounds(202, 40, 297, 14);
 		requestsPanel.add(lblTheFollowingBooks);
 
-		JList list_1 = new JList();
-		list_1.setBounds(172, 80, 365, 312);
-		requestsPanel.add(list_1);
+		JTextArea requestsTextArea= new JTextArea();
+		requestsTextArea.setBounds(172, 80, 365, 312);
+		requestsPanel.add(requestsTextArea);
 
 		JButton button_3 = new JButton("  <  Back");
 		button_3.setBounds(10, 399, 89, 23);
@@ -660,13 +660,7 @@ public class Interface_new {
 		textField_17.setColumns(10);
 
 		JButton button_6 = new JButton("< Back");
-		button_6.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				newPublisherPanel.setVisible(false);
-				generalPanel.setVisible(true);
-			}
-		});
+		
 		button_6.setBounds(10, 399, 89, 23);
 		newPublisherPanel.add(button_6);
 
@@ -750,9 +744,23 @@ public class Interface_new {
 		Employee.add(managerPanel, "name_23429361542622");
 		managerPanel.setLayout(null);
 
-		JButton btnViewRequests = new JButton("View requests");
+		JButton btnViewRequests = new JButton("View not in collection requests");
 		btnViewRequests.setBounds(266, 229, 129, 23);
 		managerPanel.add(btnViewRequests);
+		
+		btnViewRequests.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				requestsTextArea.setText("");
+				requestsPanel.setVisible(true);
+				managerPanel.setVisible(false);
+				//get the not in collection requests
+				
+				
+			}
+		});
 
 		JButton btnUpdateDatabase = new JButton("Update database");
 		btnUpdateDatabase.setBounds(266, 179, 129, 23);
@@ -826,6 +834,11 @@ public class Interface_new {
 		ownerPanel.setVisible(false);
 		salesclerkPanel.setVisible(false);
 
+		
+		
+		
+		
+		
 		// all button listeners are here
 		// added by rameshwar
 		
@@ -940,6 +953,16 @@ public class Interface_new {
 				}
 			}
 		});
+		
+		
+		button_6.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				newPublisherPanel.setVisible(false);
+				generalPanel.setVisible(true);
+			}
+		});
+		
 
 		btnUpdateDatabase.addActionListener(new ActionListener() {
 
@@ -1172,6 +1195,35 @@ public class Interface_new {
 	});	
 	
 	//bhagwat
+	
+	btnSaveChanges_2.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Vendor newvendor = new Vendor();
+			if (textField_18.getText().trim().equals("") || textField_19.getText().trim().equals("")
+					|| textField_20.getText().trim().equals("") || textField_21.getText().trim().equals("")) {
+				JOptionPane.showMessageDialog(window, "All fields are mandatory");
+			}
+
+			try {
+				newvendor.setVendorId(Integer.parseInt(textField_18.getText()));
+			} catch (Exception e1) {
+				new ErrorDialog().invoke("Please enter proper details!!");
+				e1.printStackTrace();
+			}
+			newvendor.setVendorName(textField_19.getText());
+			newvendor.setVendorAddress(textField_20.getText());
+			newvendor.setVendorEmail(textField_21.getText());
+
+			VendorDao vd = new VendorDao();
+			vd.addVendor(newvendor);
+
+			newVendorPanel.setVisible(false);
+			newPublisherPanel.setVisible(true);
+		}
+	});
+
+	//publisher button
 	btnSaveChanges_1.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -1182,11 +1234,27 @@ public class Interface_new {
 			}
 
 			try {
+				
 				newpub.setPublisherId(Integer.parseInt(textField_8.getText()));
-				Integer id1 = Integer.parseInt(textField_8.getText());
+				if(new PublisherDao().getPublisherById(newpub.getPublisherId())!=null)
+				{
+					new ErrorDialog().invoke("Publisher exists");
+					return;
+				}
+				Integer id1;
+				try
+				{
+					id1 = Integer.parseInt(textField_17.getText());
+				}
+				catch(Exception e122)
+				{
+					e122.printStackTrace();
+					return;
+				}
 				VendorDao vd = new VendorDao();
 				Vendor vendor1 = vd.getVendorById(id1);
 				if (vendor1 == null) {
+					System.out.println(id1+"huji");
 					JOptionPane.showMessageDialog(window,
 							"This vendor doesn't already exist. Redirecting to add new vendor...");
 					newPublisherPanel.setVisible(false);
@@ -1195,12 +1263,15 @@ public class Interface_new {
 					textField_19.setText("");
 					textField_20.setText("");
 					textField_21.setText("");
-					
+					return;
+				}
+				else
+				{
+					System.out.println("Huah");
 				}
 				newpub.setVendor(vendor1);
-
 			} catch (Exception e1) {
-				new ErrorDialog().invoke("Please enter proper details!!");
+				new ErrorDialog().invoke("Please enter proper details for publisher!!");
 				e1.printStackTrace();
 			}
 
@@ -1240,14 +1311,25 @@ public class Interface_new {
 								"This publisher isn't already a part of the database. Redirecting to add new vendor...");
 						newPublisherPanel.setVisible(true);
 						generalPanel.setVisible(false);
+						return; //rameshwar123
 					}
 					newbook.setPublisher(pub1);
-					newbook.setISBN(Integer.parseInt(textField_5.getText()));
+					//rameshwar123
+					try
+					{
+						newbook.setISBN(Integer.parseInt(textField_6.getText()));
+					}
+					catch(Exception e12)
+					{
+						//e12.printStackTrace();
+						return;
+					}
 					newbook.setBookTitle(txtBookTitle.getText());
 					newbook.setAuthorName(txtAuthorName.getText());
 					newbook.setImageFileName(textField_11.getText());
 					BookDao bd = new BookDao();
 					bd.addBook(newbook, nOC);
+					
 
 				} catch (Exception e1) {
 					new ErrorDialog().invoke("Please enter proper details!!");
@@ -1328,33 +1410,7 @@ public class Interface_new {
 			});
 
 	
-	btnSaveChanges_2.addActionListener(new ActionListener() {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			Vendor newvendor = new Vendor();
-			if (textField_18.getText().trim().equals("") || textField_19.getText().trim().equals("")
-					|| textField_20.getText().trim().equals("") || textField_21.getText().trim().equals("")) {
-				JOptionPane.showMessageDialog(window, "All fields are mandatory");
-			}
-
-			try {
-				newvendor.setVendorId(Integer.parseInt(textField_18.getText()));
-			} catch (Exception e1) {
-				new ErrorDialog().invoke("Please enter proper details!!");
-				e1.printStackTrace();
-			}
-			newvendor.setVendorName(textField_19.getText());
-			newvendor.setVendorAddress(textField_20.getText());
-			newvendor.setVendorEmail(textField_21.getText());
-
-			VendorDao vd = new VendorDao();
-			vd.addVendor(newvendor);
-
-			newVendorPanel.setVisible(false);
-			newPublisherPanel.setVisible(true);
-		}
-	});
-
+	
 	//BACK BUTTON IN VIEW STATISTICS	
 	button_4.addActionListener(new ActionListener() {
 		
@@ -1366,7 +1422,7 @@ public class Interface_new {
 		}
 	});
 }
-		
+
 	
 	
 	
@@ -1386,18 +1442,8 @@ public class Interface_new {
 	
 	public static void main(String[] args) {
 		
-		 /* Book book = new Book(); book.setBookTitle("algo");
-		  book.setAuthorName("bhagwat"); book.setISBN(1);
-		  
-		  Book book2 = new Book(); book2.setBookTitle("algo");
-		  book2.setAuthorName("cormen"); book2.setISBN(2);
-		  
-		  BookDao dao1 = new BookDao(); dao1.addBook(book, 5);
-		  
-		  dao1.addBook(book2, 6);*/
-		 
 		
-		Book book1=new Book();
+		/*Book book1=new Book();
 		book1.setISBN(11223);
 		book1.setNoOfCopies(0);
 		book1.setBookTitle("Hey");
@@ -1405,7 +1451,7 @@ public class Interface_new {
 		book1.setPrice(12);
 		book1.setRackNo(12);
 		book1.setThreshold(12);
-		book1.setAverageDays(12);
+		book1.setAverageDays(12);*/
 		//new BookDao().addBook(book1, 0);
 
 		

@@ -6,6 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import model.Publisher;
 import model.Vendor;
+import views.SuccessDialog;
 
 public class VendorDao {
 	
@@ -20,7 +21,8 @@ public class VendorDao {
 		{
 			if(searchVendorById(vendor.getVendorId()))
 			{
-				session.close();
+				new SuccessDialog().invoke("Vendor exists");
+	//			session.close();
 				return;
 			}
 			else
@@ -51,7 +53,6 @@ public class VendorDao {
 		try
 		{
 			Vendor vendor=(Vendor)session.get(Vendor.class, Id);
-			session.close();
 			return vendor;
 		}
 		catch(Exception e)
@@ -93,9 +94,7 @@ public class VendorDao {
 				session.getTransaction().rollback();
 			return false;
 		}
-		finally {
-			session.close();
-		}
+		
 	}
 
 }

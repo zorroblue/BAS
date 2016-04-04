@@ -25,7 +25,7 @@ public class PublisherDao {
 			else
 			{
 				session.save(publisher);
-				session.save(publisher.getVendor());
+				
 				session.getTransaction().commit();
 			}
 		}
