@@ -20,6 +20,7 @@ public class VendorDao {
 		{
 			if(searchVendorById(vendor.getVendorId()))
 			{
+				session.close();
 				return;
 			}
 			else
@@ -50,6 +51,7 @@ public class VendorDao {
 		try
 		{
 			Vendor vendor=(Vendor)session.get(Vendor.class, Id);
+			session.close();
 			return vendor;
 		}
 		catch(Exception e)
@@ -75,6 +77,7 @@ public class VendorDao {
 		try
 		{
 			Vendor vendor=(Vendor)session.get(Vendor.class, Id);
+			session.close();
 			if(vendor==null)
 			{
 				return false;

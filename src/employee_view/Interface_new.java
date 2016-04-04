@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -23,14 +24,20 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import com.itextpdf.text.DocumentException;
 import com.toedter.calendar.JDateChooser;
 
 import dao.BookDao;
+import dao.PublisherDao;
 import dao.TransactionDao;
 import dao.VendorDao;
 import model.Book;
 import model.Cart;
+import model.CartItem;
+import model.Publisher;
 import model.Vendor;
+import pdfwriter.PdfInvoicesBasic;
+import pdfwriter.ReceiptWriter;
 import views.ErrorDialog;
 import views.SuccessDialog;
 import views.ToastMessage;
@@ -623,6 +630,11 @@ public class Interface_new {
 		absentPanel.add(textField_14);
 		textField_14.setColumns(10);
 
+		textField_22 = new JTextField();
+		textField_22.setBounds(314, 238, 46, 20);
+		absentPanel.add(textField_22);
+		textField_22.setColumns(10);
+		
 		JPanel presentPanel = new JPanel();
 		presentPanel.setBounds(105, 151, 439, 94);
 		generalPanel.add(presentPanel);
@@ -810,6 +822,7 @@ public class Interface_new {
 		textField_5.setBounds(351, 154, 168, 20);
 		genreceiptPanel.add(textField_5);
 		textField_5.setColumns(10);
+		//textField_5.setText("qwq");
 
 		JLabel lblIsbn_1 = new JLabel("ISBN : ");
 		lblIsbn_1.setBounds(251, 157, 59, 14);
@@ -819,14 +832,15 @@ public class Interface_new {
 		lblEnterTheIsbn.setBounds(230, 84, 302, 14);
 		genreceiptPanel.add(lblEnterTheIsbn);
 
-		JLabel lblNewLabel_6 = new JLabel("Book title : ");
+		/*JLabel lblNewLabel_6 = new JLabel("Book title : ");
 		lblNewLabel_6.setBounds(251, 119, 59, 14);
-		genreceiptPanel.add(lblNewLabel_6);
-
+		genreceiptPanel.add(lblNewLabel_6);*/
+/*
 		JLabel lblNewLabel_7 = new JLabel("New label");
 		lblNewLabel_7.setBounds(351, 119, 223, 14);
 		genreceiptPanel.add(lblNewLabel_7);
-
+*/
+		
 		JButton btnNext = new JButton("Next book ->");
 		btnNext.setBounds(471, 364, 153, 23);
 		genreceiptPanel.add(btnNext);
@@ -844,6 +858,7 @@ public class Interface_new {
 		textField_7.setBounds(351, 198, 38, 20);
 		genreceiptPanel.add(textField_7);
 		textField_7.setColumns(10);
+		//textField_7.setText("av");
 
 		Query.setVisible(true);
 		viewBook.setVisible(false);
@@ -859,6 +874,81 @@ public class Interface_new {
 
 		// all button listeners are here
 		// added by rameshwar
+		
+		//next button of the generate receipt
+		btnNext.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Integer ISBN,noOfCopies;
+				if(textField_5.getText().equals("")|| textField_7.getText().equals(""))
+				{
+					new ErrorDialog().invoke("Please enter all values!");
+					return;
+				}
+				try
+				{
+					ISBN=Integer.parseInt(textField_5.getText());
+					noOfCopies=Integer.parseInt(textField_7.getText());
+				}
+				catch(Exception e4)
+				{
+					new ErrorDialog().invoke("Please enter proper integral values!!");
+					return;
+				}
+				
+				
+				Book book=new BookDao().getBookByISBN(ISBN);
+				if(book==null)
+				{
+					new ErrorDialog().invoke("No such book exists!");
+					return;
+				}
+				if(noOfCopies>book.getNoOfCopies())
+				{
+					new ErrorDialog().invoke("There are only "+book.getNoOfCopies()+" left");
+					return;
+				}
+				cart.getCart().add(new CartItem(book,noOfCopies));
+				//clear the screen
+				textField_5.setText("");
+				textField_7.setText("");
+			}
+		});
+		
+		
+		//TODO for all save changes actionn listeners
+		
+		btnGenerateReceipt.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(cart.getCart()==null || cart.getCart().isEmpty())
+				{
+					new ErrorDialog().invoke("There is nothing for transaction");
+					return;
+				}
+				
+				try {
+					new PdfInvoicesBasic().createPDF(cart);
+					//if success
+					//subtract the copies
+					for(CartItem b: cart.getCart())
+					{
+						b.getBook().setNoOfCopies(b.getBook().getNoOfCopies()-b.getQuantity());
+						new BookDao().addBook(b.getBook(), -b.getQuantity());
+					}
+					//transaction complete
+				} 
+				catch(Exception e21)
+				{
+					e21.printStackTrace();
+				}
+			}
+		});
+		
 		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -917,21 +1007,31 @@ public class Interface_new {
 		});
 
 		btnFind.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
-					Integer ISBN = Integer.valueOf(textField_6.getText().toString());
+					Integer ISBN = Integer.valueOf(textField_6.getText());
 					if (new BookDao().doesBookExist(ISBN)) {
-						new SuccessDialog().invoke("Book exists");
-						// TODO fill details now
-						// LATEST TODO
-						txtBookTitle.setText(new BookDao().getBookByISBN(ISBN).getBookTitle());
+						 new SuccessDialog().invoke("Book exists");
+						presentPanel.setVisible(true);
+
 					} else {
-						new ErrorDialog().invoke("This book isn't registered in database! Please register");
+						 new ErrorDialog().invoke("This book isn't registered in database! Please register");
+						absentPanel.setVisible(true);
+						textField_10.setText("");
+						textField_12.setText("");
+						textField_13.setText("");
+						textField_14.setText("");
+						textField_22.setText(""); //TODO : What is this @Bhagwat!!
+						textField_8.setText("");
+						txtBookTitle.setText("");
+						txtAuthorName.setText("");
+						textField_11.setText("");
+
 					}
 				} catch (Exception e1) {
+					e1.printStackTrace();
 					new ErrorDialog().invoke("Your request could not be processed");
 				}
 
@@ -1117,6 +1217,100 @@ public class Interface_new {
 		}
 	});	
 	//bhagwat
+	btnSaveChanges_1.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			Publisher newpub = new Publisher();
+			if (textField_8.getText().trim().equals("") || textField_9.getText().trim().equals("")
+					|| textField_17.getText().trim().equals("")) {
+				JOptionPane.showMessageDialog(window, "All fields are mandatory");
+			}
+
+			try {
+				newpub.setPublisherId(Integer.parseInt(textField_8.getText()));
+				Integer id1 = Integer.parseInt(textField_8.getText());
+				VendorDao vd = new VendorDao();
+				Vendor vendor1 = vd.getVendorById(id1);
+				if (vendor1 == null) {
+					JOptionPane.showMessageDialog(window,
+							"This vendor doesn't already exist. Redirecting to add new vendor...");
+					newPublisherPanel.setVisible(false);
+					newVendorPanel.setVisible(true);
+					textField_18.setText("");
+					textField_19.setText("");
+					textField_20.setText("");
+					textField_21.setText("");
+					
+				}
+				newpub.setVendor(vendor1);
+
+			} catch (Exception e1) {
+				new ErrorDialog().invoke("Please enter proper details!!");
+				e1.printStackTrace();
+			}
+
+			newpub.setPublisherName(textField_9.getText());
+			PublisherDao pd = new PublisherDao();
+			pd.addPublisher(newpub);
+		}
+	});
+
+	btnSaveChanges.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (absentPanel.isVisible()) {
+
+				Book newbook = new Book();
+				if (txtBookTitle.getText().trim().equals("") || txtAuthorName.getText().trim().equals("")
+						|| txtPublisher.getText().trim().equals("") || textField_11.getText().trim().equals("")
+						|| textField_10.getText().trim().equals("") || textField_12.getText().trim().equals("")
+						|| textField_13.getText().trim().equals("") || textField_14.getText().trim().equals("")
+						) {
+					JOptionPane.showMessageDialog(window, "All fields are mandatory");
+				}
+				Integer nOC = 0;
+				try {
+					newbook.setPrice(Integer.parseInt(textField_10.getText()));
+					newbook.setRackNo(Integer.parseInt(textField_12.getText()));
+					nOC = Integer.parseInt(textField_13.getText());
+					newbook.setNoOfCopies(nOC);
+					newbook.setThreshold(Integer.parseInt(textField_14.getText()));
+					newbook.setAverageDays(Integer.parseInt(textField_22.getText()));
+
+					Integer id1 = Integer.parseInt(txtPublisher.getText());
+					PublisherDao pd = new PublisherDao();
+					Publisher pub1 = pd.getPublisherById(id1);
+					if (pub1 == null) {
+						JOptionPane.showMessageDialog(window,
+								"This publisher isn't already a part of the database. Redirecting to add new vendor...");
+						newPublisherPanel.setVisible(true);
+						generalPanel.setVisible(false);
+					}
+					newbook.setPublisher(pub1);
+					newbook.setISBN(Integer.parseInt(textField_5.getText()));
+					newbook.setBookTitle(txtBookTitle.getText());
+					newbook.setAuthorName(txtAuthorName.getText());
+					newbook.setImageFileName(textField_11.getText());
+					BookDao bd = new BookDao();
+					bd.addBook(newbook, nOC);
+
+				} catch (Exception e1) {
+					new ErrorDialog().invoke("Please enter proper details!!");
+					e1.printStackTrace();
+					return;
+				}
+				
+
+			} else if (presentPanel.isVisible()) {
+				BookDao bd = new BookDao();
+				bd.addBook((bd.getBookByISBN(Integer.valueOf(textField_6.getText()))),
+						Integer.valueOf(textField_15.getText()));
+			}
+
+		}
+	});
+
+	
 	btnSaveChanges_2.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {

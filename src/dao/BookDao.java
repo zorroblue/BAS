@@ -31,14 +31,13 @@ public class BookDao {
 			{
 				session.save(thebook);
 				session.getTransaction().commit();
-				new SuccessDialog().invoke("Done!");
 				session.close();
 				return;
 			}
 			book.setNoOfCopies(book.getNoOfCopies()+quantity);
 			session.update(book);
 			session.getTransaction().commit();
-			new SuccessDialog().invoke("Done!");
+			//new SuccessDialog().invoke("Done!");
 		}
 		catch(Exception e)
 		{

@@ -34,6 +34,7 @@ public class PublisherDao {
 			if(session.getTransaction()!=null)
 				session.getTransaction().rollback();
 			e.printStackTrace();
+			//session.close();
 			return;
 		}
 		finally
@@ -52,6 +53,7 @@ public class PublisherDao {
 		try
 		{
 			Publisher publisher =(Publisher)session.get(Publisher.class, Id);
+			//session.close();
 			return publisher;
 		}
 		catch(Exception e)
@@ -77,6 +79,7 @@ public class PublisherDao {
 		try
 		{
 			Publisher publisher =(Publisher)session.get(Publisher.class, Id);
+			//session.close();
 			if(publisher==null)
 			{
 				return false;

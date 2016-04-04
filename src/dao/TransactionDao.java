@@ -29,6 +29,7 @@ public class TransactionDao {
 		{
 			session.save(transaction);
 			session.getTransaction().commit();
+			session.close();
 			return;
 		}
 		catch(Exception e)
@@ -56,6 +57,7 @@ public class TransactionDao {
 		try
 		{
 			Transaction transaction=(Transaction)session.get(Transaction.class,	Id);
+			session.close();
 			return transaction;
 		}
 		catch(Exception e)
@@ -90,7 +92,7 @@ public class TransactionDao {
 				List resultList=query2.list();
 				
 				
-				
+				session.close();
 				if(resultList==null)
 					return new String("");
 				StringBuilder stringBuilder=new StringBuilder("RESULTS:\n\n");

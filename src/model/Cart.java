@@ -8,7 +8,10 @@ public class Cart {
 	
 	ArrayList<CartItem> cart;
 	
-	
+	public Cart()
+	{
+		cart=new ArrayList<CartItem>();
+	}
 	public ArrayList<CartItem> getCart() {
 		return cart;
 	}
@@ -29,9 +32,15 @@ public class Cart {
 	
 	public void clearCart()
 	{
-		cart.clear();
+		try
+		{
+			cart.clear();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
-	
 	
 	
 }
