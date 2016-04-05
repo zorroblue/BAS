@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.DefaultListModel;
@@ -35,6 +36,7 @@ import model.Cart;
 import model.CartItem;
 import model.NotInCollection;
 import model.Publisher;
+import model.Transaction;
 import model.Vendor;
 import pdfwriter.ReportViewer;
 import pdfwriter.ReportWriter;
@@ -870,6 +872,11 @@ public class Interface_new {
 					new ErrorDialog().invoke("No such book exists!");
 					return;
 				}
+				if(noOfCopies<0)
+				{
+					new ErrorDialog().invoke("Please enter a proper value for quantity!");
+					return;
+				}
 				if(noOfCopies>book.getNoOfCopies())
 				{
 					new ErrorDialog().invoke("There are only "+book.getNoOfCopies()+" left");
@@ -905,6 +912,8 @@ public class Interface_new {
 					{
 						b.getBook().setNoOfCopies(b.getBook().getNoOfCopies()-b.getQuantity());
 						new BookDao().addBook(b.getBook(), -b.getQuantity());
+						//add transaction
+						new TransactionDao().addTransaction(new Transaction(new Date(),b.getBook().getISBN(),b.getQuantity()));
 					}
 					//transaction complete
 					try
@@ -998,11 +1007,13 @@ public class Interface_new {
 					Integer ISBN = Integer.valueOf(textField_6.getText());
 					if (new BookDao().doesBookExist(ISBN)) {
 						 new SuccessDialog().invoke("Book exists");
-						presentPanel.setVisible(true);
+						absentPanel.setVisible(false); //rameshwar123
+						 presentPanel.setVisible(true);
 
 					} else {
 						 new ErrorDialog().invoke("This book isn't registered in database! Please register");
-						absentPanel.setVisible(true);
+						presentPanel.setVisible(false); //rameshwar123
+						 absentPanel.setVisible(true);
 						textField_10.setText("");
 						textField_12.setText("");
 						textField_13.setText("");
@@ -1285,6 +1296,8 @@ public class Interface_new {
 			newpub.setPublisherName(textField_9.getText());
 			PublisherDao pd = new PublisherDao();
 			pd.addPublisher(newpub);
+	//		newPublisherPanel.setVisible(false);
+		//	orderBookPanel.setVisible(true);
 		}
 	});
 
@@ -1316,11 +1329,13 @@ public class Interface_new {
 					if (pub1 == null) {
 						JOptionPane.showMessageDialog(window,
 								"This publisher isn't already a part of the database. Redirecting to add new vendor...");
+						
 						newPublisherPanel.setVisible(true);
 						generalPanel.setVisible(false);
 						return; //rameshwar123
 					}
 					newbook.setPublisher(pub1);
+					System.out.println("You can do it");
 					//rameshwar123
 					try
 					{
@@ -1336,7 +1351,9 @@ public class Interface_new {
 					newbook.setImageFileName(textField_11.getText());
 					BookDao bd = new BookDao();
 					bd.addBook(newbook, nOC);
-					
+					//generalPanel.setVisible(false);
+					//Query.setVisible(true);
+					System.out.println("DEBUG123");
 
 				} catch (Exception e1) {
 					new ErrorDialog().invoke("Please enter proper details!!");
@@ -1345,15 +1362,18 @@ public class Interface_new {
 				}
 				
 
-			} else if (presentPanel.isVisible()) {
+			} 
+			else if (presentPanel.isVisible()) {
 				BookDao bd = new BookDao();
 				try
 				{
+					System.out.println(textField_6.getText()+"Haha123Haha"+textField_15.getText());
 					bd.addBook((bd.getBookByISBN(Integer.valueOf(textField_6.getText()))),Integer.valueOf(textField_15.getText()));
 				}
 				catch(Exception qw)
 				{
-					new ErrorDialog().invoke("Your request could not be processed");
+					new ErrorDialog().invoke("Your request cannot not be processed");
+					qw.printStackTrace();
 				}
 			}
 			
@@ -1399,6 +1419,7 @@ public class Interface_new {
 						//increment requests if book is not in Stock RAMESHWAR	
 						if(thisBook.getNoOfCopies()==0)
 						{
+						//	new ErrorDialog().invoke("I am awesome");
 							thisBook.setNoOfRequests(thisBook.getNoOfRequests()+1);
 							new BookDao().updateRequests(thisBook);
 							new ErrorDialog().invoke("The book is presently not in stock.The book will be available in 2-3 business days.");

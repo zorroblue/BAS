@@ -165,7 +165,7 @@ public class BookDao {
 		try
 		{
 			Book book=(Book)session.get(Book.class, thebook.getISBN());
-			book.setNoOfRequests(book.getNoOfCopies()+1);
+			book.setNoOfRequests(book.getNoOfRequests()+1);
 			session.update(book);
 			session.getTransaction().commit();
 		}
@@ -208,4 +208,58 @@ public class BookDao {
 		return null;
 	}
 
+	public Integer getInventoryLevel(Integer ISBN)
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		try
+		{
+			Book book=(Book)session.get(Book.class, ISBN);
+			if(book==null)
+			{
+				new ErrorDialog().invoke("No such book exists!");
+				return 0;
+			}
+			else
+			{
+				Integer no=new TransactionDao().getNoOfCopiesSold(ISBN);
+				return no*book.getAverageDays();
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return 0;
+		}
+		finally
+		{
+			session.close();	
+		}
+	}
+	
+	public List<Book> getBooksBelowThreshold()
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		try
+		{
+			Query query=session.createQuery("from Book where noOfCopies<threshold");
+			List<Book> list=query.list();
+			return list;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+		finally
+		{
+			session.close();
+		}
+	}
+	
 }

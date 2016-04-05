@@ -127,10 +127,52 @@ public class TransactionDao {
 			session.close();
 		}
 		
-		
 		return null;
 	}
 	
-	
+	public Integer getNoOfCopiesSold(Integer ISBN)
+	{
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
+		Session session=factory.openSession();
+		session.beginTransaction();
+		
+		try
+		{
+				Date toDate=new Date();
+				Calendar calendar=Calendar.getInstance();
+				calendar.add(Calendar.DATE,-14);
+				Date fromDate=calendar.getTime();
+				Query query2=session.createSQLQuery("select cast(sum(noOfCopies) as SIGNED) as 'count' from transaction where bookISBN= :isbn and dateOfTransaction BETWEEN :fromDate AND :toDate group by bookISBN;");
+				query2.setParameter("fromDate", fromDate);
+				query2.setParameter("toDate", toDate);
+				query2.setParameter("isbn", ISBN);
+				List resultList=query2.list();
+				if(resultList==null || resultList.isEmpty())
+					return 0;
+				Integer result=0;
+				for (Iterator iter = resultList.iterator(); iter.hasNext();) 
+				{
+				     Object[] objects = (Object[]) iter.next();
+				     result = (Integer) objects[0];
+				}
+				return result;   
+			}
+		catch(Exception e)
+		{
+			if(session.getTransaction()==null)
+				session.getTransaction().rollback();
+			e.printStackTrace();
+			return 0;
+		}
+		finally
+		{
+			session.close();
+		}
+	}
+				
+
+
+				
 	
 }
