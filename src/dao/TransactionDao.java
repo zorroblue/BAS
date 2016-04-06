@@ -109,7 +109,7 @@ public class TransactionDao {
 				    	 continue;
 				     }
 				     //BigInteger revenue=count.multiply(new BigInteger(book.getPrice().intValue()));
-				     stringBuilder.append(++k +". Book Name: "+book.getBookTitle()+"\nPublisherName: "+book.getAuthorName()+"\nISBN :"+book.getISBN()+"\nNo of copies sold: "+count+"\nSales revenue: "+count*book.getPrice());
+				     stringBuilder.append(++k +". Book Name: "+book.getBookTitle()+"\nPublisherName: "+book.getAuthorName()+"\nISBN :"+book.getISBN()+"\nNo of copies sold: "+count+"\nSales revenue: "+count*book.getPrice()+"\n"); //changed123
 				     
 				}
 				//System.out.println(stringBuilder.toString());
