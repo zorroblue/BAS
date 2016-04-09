@@ -26,6 +26,7 @@ import javax.swing.SwingConstants;
 
 import org.hibernate.SessionFactory;
 
+import com.itextpdf.text.log.SysoCounter;
 import com.sun.org.apache.xml.internal.security.Init;
 import com.toedter.calendar.JDateChooser;
 
@@ -114,7 +115,7 @@ public class Interface {
 		 */
 
 		JLabel label = new JLabel("");
-		label.setBounds(58, 127, 46, 14);
+		label.setBounds(58, 127, 101, 14);
 		viewBook.add(label);
 
 		JLabel lblNewLabel_1 = new JLabel("New label");
@@ -123,39 +124,39 @@ public class Interface {
 		viewBook.add(lblNewLabel_1);
 
 		JLabel lblAuthorName = new JLabel("Author Name : ");
-		lblAuthorName.setBounds(190, 232, 133, 14);
+		lblAuthorName.setBounds(136, 232, 187, 14);
 		viewBook.add(lblAuthorName);
 
 		JLabel lblPrice = new JLabel("Price : ");
-		lblPrice.setBounds(190, 267, 110, 14);
+		lblPrice.setBounds(136, 267, 164, 14);
 		viewBook.add(lblPrice);
 
 		JLabel lblNoOfCopies = new JLabel("Number of copies : ");
-		lblNoOfCopies.setBounds(190, 336, 133, 14);
+		lblNoOfCopies.setBounds(136, 336, 187, 14);
 		viewBook.add(lblNoOfCopies);
 
 		JLabel lblIsbn = new JLabel("ISBN : ");
-		lblIsbn.setBounds(190, 372, 110, 14);
+		lblIsbn.setBounds(136, 372, 164, 14);
 		viewBook.add(lblIsbn);
 
 		JLabel mlblAName = new JLabel("New label");
-		mlblAName.setBounds(414, 232, 101, 14);
+		mlblAName.setBounds(414, 232, 210, 14);
 		viewBook.add(mlblAName);
 
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(414, 267, 110, 14);
+		lblNewLabel_2.setBounds(414, 267, 210, 14);
 		viewBook.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(414, 336, 89, 14);
+		lblNewLabel_3.setBounds(414, 336, 210, 14);
 		viewBook.add(lblNewLabel_3);
 
 		JLabel lblNewLabel_4 = new JLabel("New label");
-		lblNewLabel_4.setBounds(414, 372, 89, 14);
+		lblNewLabel_4.setBounds(414, 372, 210, 14);
 		viewBook.add(lblNewLabel_4);
 
 		JButton button = new JButton("< Back");
-		button.setBounds(10, 399, 82, 23);
+		button.setBounds(10, 399, 121, 23);
 		viewBook.add(button);
 
 		/*
@@ -169,11 +170,11 @@ public class Interface {
 		 * viewBook.add(btnAddToCart);
 		 */
 		JLabel lblRackNumber = new JLabel("Rack Number : ");
-		lblRackNumber.setBounds(190, 304, 110, 14);
+		lblRackNumber.setBounds(136, 304, 164, 14);
 		viewBook.add(lblRackNumber);
 
 		JLabel lblNewLabel_5 = new JLabel("New label");
-		lblNewLabel_5.setBounds(414, 304, 46, 14);
+		lblNewLabel_5.setBounds(414, 304, 187, 14);
 		viewBook.add(lblNewLabel_5);
 
 		JPanel loginPanel = new JPanel();
@@ -184,47 +185,47 @@ public class Interface {
 		orderBookPanel.setLayout(null);
 
 		JLabel lblBookTitle = new JLabel("Book Title : ");
-		lblBookTitle.setBounds(154, 112, 82, 14);
+		lblBookTitle.setBounds(64, 112, 172, 14);
 		orderBookPanel.add(lblBookTitle);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(288, 109, 159, 20);
+		textField_2.setBounds(288, 109, 265, 20);
 		orderBookPanel.add(textField_2);
 		textField_2.setColumns(10);
 
 		JLabel lblAuthorName_1 = new JLabel("Author Name : ");
-		lblAuthorName_1.setBounds(153, 157, 83, 14);
+		lblAuthorName_1.setBounds(64, 157, 172, 14);
 		orderBookPanel.add(lblAuthorName_1);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(288, 154, 159, 20);
+		textField_3.setBounds(288, 154, 265, 20);
 		orderBookPanel.add(textField_3);
 		textField_3.setColumns(10);
 
 		JLabel lblPublisher = new JLabel("Publisher : ");
-		lblPublisher.setBounds(154, 210, 97, 14);
+		lblPublisher.setBounds(64, 210, 187, 14);
 		orderBookPanel.add(lblPublisher);
 
 		textField_4 = new JTextField();
-		textField_4.setBounds(288, 207, 159, 20);
+		textField_4.setBounds(288, 207, 265, 20);
 		orderBookPanel.add(textField_4);
 		textField_4.setColumns(10);
 
 		JLabel lblFillInThese = new JLabel("Fill in these details for the procurement of the book");
 		lblFillInThese.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblFillInThese.setBounds(166, 34, 340, 14);
+		lblFillInThese.setBounds(121, 34, 457, 14);
 		orderBookPanel.add(lblFillInThese);
 
 		JButton btnPlaceOrder = new JButton("Place order");
-		btnPlaceOrder.setBounds(259, 312, 104, 23);
+		btnPlaceOrder.setBounds(246, 340, 179, 23);
 		orderBookPanel.add(btnPlaceOrder);
 
 		JLabel lblIsbn_3 = new JLabel("ISBN : ");
-		lblIsbn_3.setBounds(154, 266, 46, 14);
+		lblIsbn_3.setBounds(64, 266, 136, 14);
 		orderBookPanel.add(lblIsbn_3);
 
 		textField_16 = new JTextField();
-		textField_16.setBounds(288, 263, 159, 20);
+		textField_16.setBounds(288, 263, 265, 20);
 		orderBookPanel.add(textField_16);
 		textField_16.setColumns(10);
 
@@ -238,20 +239,20 @@ public class Interface {
 		Query.add(btnSearch);
 
 		textField = new JTextField();
-		textField.setBounds(163, 41, 390, 20);
+		textField.setBounds(218, 41, 335, 20);
 		Query.add(textField);
 		textField.setColumns(10);
 
 		JLabel lblSearchByBook = new JLabel("Search by Book title");
-		lblSearchByBook.setBounds(39, 44, 114, 14);
+		lblSearchByBook.setBounds(39, 44, 149, 14);
 		Query.add(lblSearchByBook);
 
 		JLabel lblSearchByAuthor = new JLabel("Search by author");
-		lblSearchByAuthor.setBounds(39, 81, 114, 14);
+		lblSearchByAuthor.setBounds(39, 81, 149, 14);
 		Query.add(lblSearchByAuthor);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(163, 78, 390, 20);
+		textField_1.setBounds(218, 78, 335, 20);
 		Query.add(textField_1);
 		textField_1.setColumns(10);
 
@@ -280,7 +281,7 @@ public class Interface {
 		 * Query.add(btnFinaliseCart);
 		 */
 		JButton btnViewSelectedBook = new JButton("View selected book");
-		btnViewSelectedBook.setBounds(255, 399, 164, 23);
+		btnViewSelectedBook.setBounds(255, 399, 252, 23);
 		Query.add(btnViewSelectedBook);
 
 		// JList for book query
@@ -300,6 +301,16 @@ public class Interface {
 		JButton button_1 = new JButton("< Back");
 		button_1.setBounds(10, 399, 89, 23);
 		orderBookPanel.add(button_1);
+		
+		button_1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Query.setVisible(true);
+				orderBookPanel.setVisible(false);
+			}
+		});
 
 		JPanel Employee = new JPanel();
 		tabbedPane.addTab("Employee", null, Employee, null);
@@ -339,11 +350,11 @@ public class Interface {
 		salesclerkPanel.setLayout(null);
 
 		JButton btnNewButton = new JButton("Generate Receipt");
-		btnNewButton.setBounds(270, 168, 117, 36);
+		btnNewButton.setBounds(186, 168, 201, 36);
 		salesclerkPanel.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Update database");
-		btnNewButton_1.setBounds(270, 239, 117, 36);
+		btnNewButton_1.setBounds(186, 239, 201, 36);
 		salesclerkPanel.add(btnNewButton_1);
 
 		// next button for the salesclerk
@@ -354,7 +365,7 @@ public class Interface {
 		salesclerkPanel.add(btnLogOut_3);
 
 		JLabel lblLoggedInAs = new JLabel("Logged in as : Sales Clerk");
-		lblLoggedInAs.setBounds(431, 15, 139, 14);
+		lblLoggedInAs.setBounds(340, 15, 230, 14);
 		salesclerkPanel.add(lblLoggedInAs);
 
 		JPanel statisticsPanel = new JPanel();
@@ -362,28 +373,24 @@ public class Interface {
 		statisticsPanel.setLayout(null);
 
 		JLabel lblStartDate = new JLabel("Start Date : ");
-		lblStartDate.setBounds(187, 27, 89, 14);
+		lblStartDate.setBounds(10, 27, 103, 14);
 		statisticsPanel.add(lblStartDate);
 
 		JLabel lblLastDate = new JLabel("Last Date : ");
-		lblLastDate.setBounds(385, 27, 89, 14);
+		lblLastDate.setBounds(10, 53, 103, 14);
 		statisticsPanel.add(lblLastDate);
 
 		JLabel lblNewLabel_9 = new JLabel("New label");
-		lblNewLabel_9.setBounds(286, 27, 89, 14);
+		lblNewLabel_9.setBounds(125, 27, 221, 14);
 		statisticsPanel.add(lblNewLabel_9);
 
 		JLabel lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setBounds(484, 27, 93, 14);
+		lblNewLabel_10.setBounds(125, 53, 221, 14);
 		statisticsPanel.add(lblNewLabel_10);
 
 		JButton button_4 = new JButton(" < Back");
 		button_4.setBounds(10, 398, 89, 23);
 		statisticsPanel.add(button_4);
-
-		JLabel lblSalesStatisticsFor = new JLabel("Sales statistics for :");
-		lblSalesStatisticsFor.setBounds(34, 27, 119, 14);
-		statisticsPanel.add(lblSalesStatisticsFor);
 
 		JScrollPane scrollPane_4 = new JScrollPane();
 		scrollPane_4.setBounds(121, 99, 453, 276);
@@ -399,7 +406,7 @@ public class Interface {
 		JLabel lblNewLabel_8 = new JLabel("View Sales Statistics");
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_8.setBounds(122, 55, 135, 14);
+		lblNewLabel_8.setBounds(122, 55, 228, 14);
 		ownerPanel.add(lblNewLabel_8);
 
 		JLabel lblEnterStartDate = new JLabel("Start date : ");
@@ -408,7 +415,7 @@ public class Interface {
 
 		JButton button_2 = new JButton("Get statistics");
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_2.setBounds(145, 303, 112, 38);
+		button_2.setBounds(122, 303, 202, 38);
 		ownerPanel.add(button_2);
 
 		JLabel lblEnterLastDate = new JLabel("Last date : ");
@@ -480,11 +487,11 @@ public class Interface {
 
 		JButton btnGetList = new JButton("Get List >");
 
-		btnGetList.setBounds(501, 318, 89, 23);
+		btnGetList.setBounds(473, 318, 132, 23);
 		ownerPanel.add(btnGetList);
 
 		JLabel lblLoggedInAs_2 = new JLabel("Logged in as : Owner");
-		lblLoggedInAs_2.setBounds(444, 15, 135, 14);
+		lblLoggedInAs_2.setBounds(351, 15, 228, 14);
 		ownerPanel.add(lblLoggedInAs_2);
 
 		JPanel generalPanel = new JPanel();
@@ -494,7 +501,7 @@ public class Interface {
 		JLabel lblUpdateTheDatabase = new JLabel("Update the database : ");
 		lblUpdateTheDatabase.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblUpdateTheDatabase.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUpdateTheDatabase.setBounds(246, 58, 142, 14);
+		lblUpdateTheDatabase.setBounds(246, 58, 189, 14);
 		generalPanel.add(lblUpdateTheDatabase);
 
 		JLabel lblIsbn_2 = new JLabel("ISBN :");
@@ -516,15 +523,15 @@ public class Interface {
 		absentPanel.setLayout(null);
 
 		JLabel lblNewLabel_11 = new JLabel(
-				"This book is not already a part of a database. Fill out these details to add the book : ");
-		lblNewLabel_11.setBounds(50, 11, 481, 14);
+				"Please fill up the details. ");
+		lblNewLabel_11.setBounds(108, 11, 423, 14);
 		absentPanel.add(lblNewLabel_11);
 
 		JLabel lblNewLabel_12 = new JLabel("Book title");
-		lblNewLabel_12.setBounds(29, 36, 61, 14);
+		lblNewLabel_12.setBounds(29, 36, 101, 14);
 		absentPanel.add(lblNewLabel_12);
 
-		JLabel lblNewLabel_13 = new JLabel("Author Name");
+		JLabel lblNewLabel_13 = new JLabel("Author");
 		lblNewLabel_13.setBounds(29, 72, 73, 14);
 		absentPanel.add(lblNewLabel_13);
 
@@ -536,20 +543,20 @@ public class Interface {
 		lblNewLabel_15.setBounds(29, 192, 46, 14);
 		absentPanel.add(lblNewLabel_15);
 
-		JLabel lblNewLabel_16 = new JLabel("Image file location");
+		JLabel lblNewLabel_16 = new JLabel("Image file");
 		lblNewLabel_16.setBounds(29, 153, 101, 14);
 		absentPanel.add(lblNewLabel_16);
 
 		JLabel lblNewLabel_18 = new JLabel("Threshold Level");
-		lblNewLabel_18.setBounds(359, 192, 89, 14);
+		lblNewLabel_18.setBounds(305, 192, 143, 14);
 		absentPanel.add(lblNewLabel_18);
 
-		JLabel lblNewLabel_19 = new JLabel("Rack number ");
+		JLabel lblNewLabel_19 = new JLabel("Rack no");
 		lblNewLabel_19.setBounds(359, 114, 73, 14);
 		absentPanel.add(lblNewLabel_19);
 
-		JLabel lblNewLabel_20 = new JLabel("Number of copies");
-		lblNewLabel_20.setBounds(359, 150, 89, 14);
+		JLabel lblNewLabel_20 = new JLabel("No of copies");
+		lblNewLabel_20.setBounds(347, 150, 101, 14);
 		absentPanel.add(lblNewLabel_20);
 
 		txtBookTitle = new JTextField();
@@ -597,7 +604,7 @@ public class Interface {
 		absentPanel.add(textField_22);
 		textField_22.setColumns(10);
 
-		JLabel lblAverageNumberOf = new JLabel("Average number of days required to procure the book ");
+		JLabel lblAverageNumberOf = new JLabel("Average procurement time");
 		lblAverageNumberOf.setBounds(29, 227, 286, 14);
 		absentPanel.add(lblAverageNumberOf);
 
@@ -606,12 +613,12 @@ public class Interface {
 		generalPanel.add(presentPanel);
 		presentPanel.setLayout(null);
 
-		JLabel lblNumberOfCopies = new JLabel("Number of copies to be added");
-		lblNumberOfCopies.setBounds(0, 0, 180, 14);
+		JLabel lblNumberOfCopies = new JLabel("No of copies to be added");
+		lblNumberOfCopies.setBounds(12, 0, 235, 14);
 		presentPanel.add(lblNumberOfCopies);
 
 		textField_15 = new JTextField();
-		textField_15.setBounds(265, 0, 46, 20);
+		textField_15.setBounds(292, 0, 135, 20);
 		presentPanel.add(textField_15);
 		textField_15.setColumns(10);
 
@@ -626,12 +633,12 @@ public class Interface {
 		generalPanel.add(btnSaveChanges);
 
 		JLabel lblLoggedInAs_1 = new JLabel("Logged in as : General Employee");
-		lblLoggedInAs_1.setBounds(397, 15, 181, 14);
+		lblLoggedInAs_1.setBounds(309, 15, 269, 14);
 		generalPanel.add(lblLoggedInAs_1);
 
 		JButton back_button_8 = new JButton("< Back");
 
-		back_button_8.setBounds(10, 399, 73, 23);
+		back_button_8.setBounds(10, 399, 121, 23);
 		generalPanel.add(back_button_8);
 
 		JPanel requestsPanel = new JPanel();
@@ -639,11 +646,11 @@ public class Interface {
 		requestsPanel.setLayout(null);
 
 		JLabel lblTheFollowingBooks = new JLabel("The following books have been requested : ");
-		lblTheFollowingBooks.setBounds(202, 40, 297, 14);
+		lblTheFollowingBooks.setBounds(135, 40, 364, 14);
 		requestsPanel.add(lblTheFollowingBooks);
 
 		JButton button_3 = new JButton("  <  Back");
-		button_3.setBounds(10, 399, 89, 23);
+		button_3.setBounds(10, 399, 105, 23);
 		requestsPanel.add(button_3);
 
 		JScrollPane scrollPane_2 = new JScrollPane();
@@ -657,15 +664,15 @@ public class Interface {
 		newPublisherPanel.setLayout(null);
 
 		JLabel label_1 = new JLabel("Publisher ID : ");
-		label_1.setBounds(161, 128, 114, 14);
+		label_1.setBounds(108, 128, 167, 14);
 		newPublisherPanel.add(label_1);
 
 		JLabel lblNewLabel = new JLabel("Publisher Name : ");
-		lblNewLabel.setBounds(161, 177, 114, 14);
+		lblNewLabel.setBounds(108, 177, 167, 14);
 		newPublisherPanel.add(lblNewLabel);
 
 		JLabel lblVendorId = new JLabel("Vendor ID : ");
-		lblVendorId.setBounds(161, 229, 84, 14);
+		lblVendorId.setBounds(108, 229, 137, 14);
 		newPublisherPanel.add(lblVendorId);
 
 		textField_8 = new JTextField();
@@ -685,16 +692,16 @@ public class Interface {
 
 		JButton button_6 = new JButton("< Back");
 
-		button_6.setBounds(10, 399, 89, 23);
+		button_6.setBounds(10, 399, 143, 23);
 		newPublisherPanel.add(button_6);
 
 		JButton btnSaveChanges_1 = new JButton("Save changes");
-		btnSaveChanges_1.setBounds(268, 322, 114, 23);
+		btnSaveChanges_1.setBounds(268, 322, 184, 23);
 		newPublisherPanel.add(btnSaveChanges_1);
 
 		JLabel lblAddNewPublisher = new JLabel("Add new publisher to database : ");
 		lblAddNewPublisher.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblAddNewPublisher.setBounds(229, 56, 190, 14);
+		lblAddNewPublisher.setBounds(229, 56, 267, 14);
 		newPublisherPanel.add(lblAddNewPublisher);
 
 		JPanel newVendorPanel = new JPanel();
@@ -706,15 +713,15 @@ public class Interface {
 		newVendorPanel.add(lblNewLabel_17);
 
 		JLabel lblName = new JLabel("Name : ");
-		lblName.setBounds(201, 171, 46, 14);
+		lblName.setBounds(201, 171, 89, 14);
 		newVendorPanel.add(lblName);
 
 		JLabel lblAddress = new JLabel("Address : ");
-		lblAddress.setBounds(201, 220, 70, 14);
+		lblAddress.setBounds(201, 220, 101, 14);
 		newVendorPanel.add(lblAddress);
 
 		JLabel lblEmail = new JLabel("Email : ");
-		lblEmail.setBounds(201, 266, 46, 14);
+		lblEmail.setBounds(201, 266, 89, 20);
 		newVendorPanel.add(lblEmail);
 
 		textField_18 = new JTextField();
@@ -739,7 +746,7 @@ public class Interface {
 
 		JLabel lblNewLabel_21 = new JLabel("Add new vendor to database");
 		lblNewLabel_21.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNewLabel_21.setBounds(250, 50, 173, 14);
+		lblNewLabel_21.setBounds(169, 50, 254, 14);
 		newVendorPanel.add(lblNewLabel_21);
 
 		JButton button_7 = new JButton(" < Back");
@@ -758,7 +765,7 @@ public class Interface {
 
 		JButton btnSaveChanges_2 = new JButton("Save changes");
 
-		btnSaveChanges_2.setBounds(295, 338, 110, 23);
+		btnSaveChanges_2.setBounds(295, 338, 192, 23);
 		newVendorPanel.add(btnSaveChanges_2);
 
 		JPanel belowThresholdPanel = new JPanel();
@@ -767,7 +774,7 @@ public class Interface {
 
 		JLabel lblViewList = new JLabel("List of books that have fallen below the threshold");
 		lblViewList.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblViewList.setBounds(214, 44, 295, 14);
+		lblViewList.setBounds(152, 44, 357, 14);
 		belowThresholdPanel.add(lblViewList);
 
 		JButton btnNewButton_3 = new JButton("< Back");
@@ -787,11 +794,11 @@ public class Interface {
 		managerPanel.setLayout(null);
 
 		JButton btnViewRequests = new JButton("View not in collection requests");
-		btnViewRequests.setBounds(253, 283, 187, 33);
+		btnViewRequests.setBounds(213, 283, 282, 33);
 		managerPanel.add(btnViewRequests);
 
 		JButton btnUpdateDatabase = new JButton("Update database");
-		btnUpdateDatabase.setBounds(279, 141, 129, 33);
+		btnUpdateDatabase.setBounds(213, 141, 282, 33);
 		managerPanel.add(btnUpdateDatabase);
 
 		JButton btnLogOut_2 = new JButton("Log out");
@@ -799,15 +806,15 @@ public class Interface {
 		managerPanel.add(btnLogOut_2);
 
 		JButton generate = new JButton("Generate receipt");
-		generate.setBounds(279, 202, 129, 33);
+		generate.setBounds(213, 202, 282, 33);
 		managerPanel.add(generate);
 
 		JButton btnViewNotInStock = new JButton("View not in stock requests");
-		btnViewNotInStock.setBounds(253, 337, 187, 33);
+		btnViewNotInStock.setBounds(213, 337, 282, 33);
 		managerPanel.add(btnViewNotInStock);
 
 		JLabel lblLoggedInAs_3 = new JLabel("Logged in as : Manager");
-		lblLoggedInAs_3.setBounds(422, 15, 124, 14);
+		lblLoggedInAs_3.setBounds(308, 15, 238, 14);
 		managerPanel.add(lblLoggedInAs_3);
 		// Owner.setLayout(null);
 
@@ -822,11 +829,11 @@ public class Interface {
 		// textField_5.setText("qwq");
 
 		JLabel lblIsbn_1 = new JLabel("ISBN : ");
-		lblIsbn_1.setBounds(251, 157, 59, 14);
+		lblIsbn_1.setBounds(197, 157, 113, 14);
 		genreceiptPanel.add(lblIsbn_1);
 
 		JLabel lblEnterTheIsbn = new JLabel("Enter the ISBN number of the following book :");
-		lblEnterTheIsbn.setBounds(230, 84, 302, 14);
+		lblEnterTheIsbn.setBounds(230, 84, 382, 14);
 		genreceiptPanel.add(lblEnterTheIsbn);
 
 		/*
@@ -841,19 +848,19 @@ public class Interface {
 		 */
 
 		JButton btnNext = new JButton("Add book to cart");
-		btnNext.setBounds(288, 249, 115, 23);
+		btnNext.setBounds(271, 240, 180, 23);
 		genreceiptPanel.add(btnNext);
 
 		JButton btnGenerateReceipt = new JButton("Generate Receipt");
-		btnGenerateReceipt.setBounds(288, 337, 129, 34);
+		btnGenerateReceipt.setBounds(243, 304, 231, 34);
 		genreceiptPanel.add(btnGenerateReceipt);
 
 		JLabel lblNoOfCopies_1 = new JLabel("No of copies : ");
-		lblNoOfCopies_1.setBounds(251, 201, 99, 14);
+		lblNoOfCopies_1.setBounds(197, 201, 153, 14);
 		genreceiptPanel.add(lblNoOfCopies_1);
 
 		textField_7 = new JTextField();
-		textField_7.setBounds(351, 198, 38, 20);
+		textField_7.setBounds(351, 198, 168, 20);
 		genreceiptPanel.add(textField_7);
 		textField_7.setColumns(10);
 
@@ -873,7 +880,7 @@ public class Interface {
 
 			}
 		});
-		button_5.setBounds(10, 399, 89, 23);
+		button_5.setBounds(10, 399, 137, 23);
 		genreceiptPanel.add(button_5);
 		// textField_7.setText("av");
 
@@ -1243,11 +1250,13 @@ public class Interface {
 				if (textField_18.getText().trim().equals("") || textField_19.getText().trim().equals("")
 						|| textField_20.getText().trim().equals("") || textField_21.getText().trim().equals("")) {
 					JOptionPane.showMessageDialog(window, "All fields are mandatory");
+					return;
 				}
 
 				try {
 					newvendor.setVendorId(Integer.parseInt(textField_18.getText()));
-				} catch (Exception e1) {
+				}
+				catch (Exception e1) {
 					new ErrorDialog().invoke("Please enter proper details!!");
 					e1.printStackTrace();
 					return;
@@ -1273,6 +1282,7 @@ public class Interface {
 				if (textField_8.getText().trim().equals("") || textField_9.getText().trim().equals("")
 						|| textField_17.getText().trim().equals("")) {
 					JOptionPane.showMessageDialog(window, "All fields are mandatory");
+					return;
 				}
 
 				try {
@@ -1285,9 +1295,9 @@ public class Interface {
 					Integer id1;
 				
 		     		id1 = Integer.parseInt(textField_17.getText());
+					System.out.println(id1+" is the id");
 					
-					Vendor vendor1 = new VendorDao().getVendorById(id1);
-					if (vendor1 == null) {
+					if (new VendorDao().searchVendorById(id1) == false) {
 						System.out.println(id1 + "huji");
 						JOptionPane.showMessageDialog(window,
 								"This vendor doesn't already exist. Redirecting to add new vendor...");
@@ -1302,8 +1312,9 @@ public class Interface {
 						return;
 					} else {
 						System.out.println("Huah");
-					}
+					Vendor vendor1 = new VendorDao().getVendorById(id1);
 					newpub.setVendor(vendor1);
+					}
 				} catch (Exception e1) {
 					new ErrorDialog().invoke("Please enter proper details for publisher!!");
 					//e1.printStackTrace();
@@ -1329,6 +1340,7 @@ public class Interface {
 							|| textField_13.getText().trim().equals("") || textField_14.getText().trim().equals("")
 							|| textField_22.getText().trim().equals("")) {
 						JOptionPane.showMessageDialog(window, "All fields are mandatory");
+						return;
 					}
 					Integer nOC = 0;
 					try {
@@ -1340,8 +1352,8 @@ public class Interface {
 						newbook.setAverageDays(Integer.parseInt(textField_22.getText()));
 
 						Integer id1 = Integer.parseInt(txtPublisher.getText());
-						PublisherDao pd = new PublisherDao();
-						Publisher pub1 = pd.getPublisherById(id1);
+						//PublisherDao pd = new PublisherDao();
+						Publisher pub1 = new PublisherDao().getPublisherById(id1);
 						if (pub1 == null) {
 							JOptionPane.showMessageDialog(window,
 									"This publisher isn't already a part of the database. Redirecting to add new vendor...");
@@ -1658,7 +1670,37 @@ public class Interface {
 	}
 
 	public static void main(String[] args) {
-
+		int i;
+		/*for(i=1000;i<1030;i++)
+		{
+			Book book=new Book();
+			book.setBookTitle("asas");
+			//book.setBookTitle("ghaia");
+			book.setAverageDays(12);
+			book.setImageFileName("ass");
+			book.setISBN(i+1000);
+			book.setNoOfCopies(12);
+			book.setNoOfRequests(12);
+			book.setPrice(12);
+			book.setRackNo(12);
+			book.setAuthorName("assasa");
+			book.setThreshold(12);
+			Publisher pub=new Publisher();
+			pub.setPublisherId(1000+i);
+			pub.setPublisherName("asas");
+			Vendor ven=new Vendor();
+			ven.setVendorAddress("da");
+			ven.setVendorEmail("dad");
+			ven.setVendorId(i+1000);
+			ven.setVendorName("dsadas");
+			new VendorDao().addVendor(ven);
+			pub.setVendor(ven);
+			new PublisherDao().addPublisher(pub);
+			book.setPublisher(pub);
+			new BookDao().addBook(book, book.getNoOfCopies());
+			
+		
+		}*/
 		
 		//one time initialisation 
 		SessionFactory sf=new InitialiseSFHibernate().getSessionFactory();

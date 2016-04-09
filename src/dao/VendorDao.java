@@ -46,13 +46,16 @@ public class VendorDao {
 	
 	public Vendor getVendorById(Integer Id)
 	{
-		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
 		try
 		{
 			Vendor vendor=(Vendor)session.get(Vendor.class, Id);
+			
+			
 			return vendor;
 		}
 		catch(Exception e)
@@ -70,7 +73,8 @@ public class VendorDao {
 	
 	public boolean searchVendorById(Integer Id)
 	{
-		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
+		Configuration configuration=new Configuration().configure();
+		SessionFactory factory= configuration.buildSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
