@@ -11,8 +11,7 @@ public class PublisherDao {
 
 	public void addPublisher(Publisher publisher)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -45,8 +44,7 @@ public class PublisherDao {
 	
 	public Publisher getPublisherById(Integer Id)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -71,8 +69,7 @@ public class PublisherDao {
 	
 	public boolean searchPublisherById(Integer Id)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		

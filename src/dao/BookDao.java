@@ -18,8 +18,7 @@ public class BookDao {
 	//add quantity number of books to the inventory
 	public void addBook(Book thebook,Integer quantity)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -68,8 +67,7 @@ public class BookDao {
 	
 	public void deleteBook(Integer ISBN)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class,ISBN);
@@ -104,8 +102,7 @@ public class BookDao {
 	public List<Book> getBooksByTitle(String title)
 	{
 		
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Query query=session.createQuery("from Book where bookTitle = :thetitle");
@@ -118,8 +115,7 @@ public class BookDao {
 	
 	public List<Book> getBooksByAuthorName(String authorName)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Query query=session.createQuery("from Book where authorName = :authorname");
@@ -132,8 +128,7 @@ public class BookDao {
 	
 	public boolean doesBookExist(Integer ISBN)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class, ISBN);
@@ -147,8 +142,7 @@ public class BookDao {
 	
 	public Book getBookByISBN(Integer ISBN)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		Book book=(Book)session.get(Book.class, ISBN);
@@ -158,8 +152,7 @@ public class BookDao {
 	
 	public void updateRequests(Book thebook)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		try
@@ -183,8 +176,7 @@ public class BookDao {
 	
 	public List<Book> getRequests()
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		try
@@ -210,8 +202,7 @@ public class BookDao {
 
 	public Integer getInventoryLevel(Integer ISBN)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		try
@@ -241,8 +232,7 @@ public class BookDao {
 	
 	public List<Book> getBooksBelowThreshold()
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		try

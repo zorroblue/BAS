@@ -12,8 +12,7 @@ public class VendorDao {
 	
 	public void addVendor(Vendor vendor)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -28,7 +27,9 @@ public class VendorDao {
 			else
 			{
 				session.save(vendor);
+				
 				session.getTransaction().commit();
+				System.out.println("Vendor added!"+vendor.getVendorId());
 			}
 		}
 		catch(Exception e)
@@ -45,8 +46,7 @@ public class VendorDao {
 	
 	public Vendor getVendorById(Integer Id)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -70,15 +70,13 @@ public class VendorDao {
 	
 	public boolean searchVendorById(Integer Id)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
 		try
 		{
 			Vendor vendor=(Vendor)session.get(Vendor.class, Id);
-			session.close();
 			if(vendor==null)
 			{
 				return false;

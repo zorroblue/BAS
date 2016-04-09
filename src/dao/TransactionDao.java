@@ -19,8 +19,7 @@ public class TransactionDao {
 
 	public void addTransaction(Transaction transaction)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -48,8 +47,7 @@ public class TransactionDao {
 	
 	public Transaction getTransactionById(Integer Id)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -77,8 +75,7 @@ public class TransactionDao {
 	
 	public String getStatistics(Date fromDate, Date toDate)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -108,7 +105,7 @@ public class TransactionDao {
 				    	 continue;
 				     }
 				     //BigInteger revenue=count.multiply(new BigInteger(book.getPrice().intValue()));
-				     stringBuilder.append(++k +". Book Name: "+book.getBookTitle()+"\nPublisherName: "+book.getAuthorName()+"\nISBN :"+book.getISBN()+"\nNo of copies sold: "+count+"\nSales revenue: "+count*book.getPrice()+"\n"); //changed123
+				     stringBuilder.append(++k +". Book Name: "+book.getBookTitle()+"\nAuthorName: "+book.getAuthorName()+"\nPublisher Name: "+book.getPublisher().getPublisherName()+"\nISBN :"+book.getISBN()+"\nNo of copies sold: "+count+"\nSales revenue: "+count*book.getPrice()+"\n\n"); //changed123
 				     
 				}
 				//System.out.println(stringBuilder.toString());
@@ -131,8 +128,7 @@ public class TransactionDao {
 	
 	public Integer getNoOfCopiesSold(Integer ISBN)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -152,8 +148,8 @@ public class TransactionDao {
 				Integer result=0;
 				for (Iterator iter = resultList.iterator(); iter.hasNext();) 
 				{
-				     Object[] objects = (Object[]) iter.next();
-				     result = (Integer) objects[0];
+				     BigInteger object=(BigInteger)iter.next();
+				     result=(object).intValue();
 				}
 				return result;   
 			}

@@ -14,8 +14,7 @@ public class NotInCollectionDao {
 	//adding a new request is compulsory to have the ISBN code
 	public void addRequest(NotInCollection request)
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		//get all requests for new books
@@ -53,8 +52,7 @@ public class NotInCollectionDao {
 	
 	public void removeRequest(Integer ISBN) //removes request if the book has been ordered
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();
 		Session session=factory.openSession();
 		session.beginTransaction();
 		
@@ -81,8 +79,7 @@ public class NotInCollectionDao {
 	//if list is null , then CHECK and give error message.
 	public List<NotInCollection> viewRequests()
 	{
-		Configuration configuration=new Configuration().configure();
-		SessionFactory factory= configuration.buildSessionFactory();
+		SessionFactory factory=new InitialiseSFHibernate().getSessionFactory();;
 		Session session=factory.openSession();
 		session.beginTransaction();
 		List<NotInCollection> list=null;

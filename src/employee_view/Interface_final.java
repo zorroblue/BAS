@@ -1293,12 +1293,8 @@ public class Interface_final {
 						return;
 					}
 					Integer id1;
-					try {
-						id1 = Integer.parseInt(textField_17.getText());
-					} catch (Exception e122) {
-						e122.printStackTrace();
-						return;
-					}
+				
+					id1 = Integer.parseInt(textField_17.getText());
 					VendorDao vd = new VendorDao();
 					Vendor vendor1 = vd.getVendorById(id1);
 					if (vendor1 == null) {
