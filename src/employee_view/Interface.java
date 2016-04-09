@@ -5,11 +5,15 @@ import java.awt.CardLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -26,8 +30,6 @@ import javax.swing.SwingConstants;
 
 import org.hibernate.SessionFactory;
 
-import com.itextpdf.text.log.SysoCounter;
-import com.sun.org.apache.xml.internal.security.Init;
 import com.toedter.calendar.JDateChooser;
 
 import dao.BookDao;
@@ -36,6 +38,7 @@ import dao.NotInCollectionDao;
 import dao.PublisherDao;
 import dao.TransactionDao;
 import dao.VendorDao;
+import javafx.scene.image.Image;
 import model.Book;
 import model.Cart;
 import model.CartItem;
@@ -115,8 +118,19 @@ public class Interface {
 		 */
 
 		JLabel label = new JLabel("");
-		label.setBounds(58, 127, 101, 14);
+		label.setBounds(256, 30, 146, 142);
 		viewBook.add(label);
+		
+		try
+		{
+			BufferedImage img=ImageIO.read(new File("images/images.jpeg"));
+			ImageIcon icon=new ImageIcon(img);
+			label.setIcon(icon);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
