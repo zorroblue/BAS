@@ -1,10 +1,10 @@
 This is the repo for the Software Lab assignment 2016.
-Book Automation Software.
-This is just a temporary repo. Will update it in sometime
+Book Automation Software.<br> 
+This is just a <b>temporary repo</b>. Will update it in sometime<br>
 
-Uses Hibernate,iText and IcePdf libaries.
-
-Contributors:
-
-Rameshwar Bhaskaran [zorroblue]
-Aditya Bhagwat [Eraseread]
+Uses Hibernate,iText and IcePdf libaries.<br>
+<br>
+Contributors:<br>
+<br>
+Rameshwar Bhaskaran [zorroblue]<br>
+Aditya Bhagwat [Eraseread]<br>
