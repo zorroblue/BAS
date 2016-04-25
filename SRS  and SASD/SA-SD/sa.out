@@ -1,0 +1,47 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Purpose}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Analysis of stakeholders}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{Customer}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{Employee}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.3}{Sales Clerk}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.4}{Manager}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.5}{Owner}{section.1.2}% 8
+\BOOKMARK [1][-]{section.1.3}{Relevant Study}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.4}{Alternatives to used tools}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.5}{Criteria to evaluate alternatives}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.6}{Unusual circumstances}{chapter.1}% 12
+\BOOKMARK [0][-]{chapter.2}{UML Diagrams}{}% 13
+\BOOKMARK [1][-]{section.2.1}{Use Case Diagrams}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{Class Diagram}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.3}{Sequence Diagrams}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.3.1}{Book query and transactions}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.2}{Generate receipt}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.3}{Procurement of books}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.4}{Update inventory}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.5}{View requests}{section.2.3}% 21
+\BOOKMARK [1][-]{section.2.4}{Communication Diagrams}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.4.1}{Book query and transactions}{section.2.4}% 23
+\BOOKMARK [2][-]{subsection.2.4.2}{Generate receipt}{section.2.4}% 24
+\BOOKMARK [2][-]{subsection.2.4.3}{Procure books}{section.2.4}% 25
+\BOOKMARK [2][-]{subsection.2.4.4}{Update inventory}{section.2.4}% 26
+\BOOKMARK [2][-]{subsection.2.4.5}{View requests}{section.2.4}% 27
+\BOOKMARK [1][-]{section.2.5}{Activity Diagrams}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.5.1}{Manager's activity}{section.2.5}% 29
+\BOOKMARK [2][-]{subsection.2.5.2}{Book query}{section.2.5}% 30
+\BOOKMARK [2][-]{subsection.2.5.3}{Stock arrival}{section.2.5}% 31
+\BOOKMARK [1][-]{section.2.6}{State diagrams}{chapter.2}% 32
+\BOOKMARK [2][-]{subsection.2.6.1}{Book}{section.2.6}% 33
+\BOOKMARK [2][-]{subsection.2.6.2}{Cart}{section.2.6}% 34
+\BOOKMARK [2][-]{subsection.2.6.3}{Order}{section.2.6}% 35
+\BOOKMARK [0][-]{chapter.3}{System analysis}{}% 36
+\BOOKMARK [1][-]{section.3.1}{System Parameters}{chapter.3}% 37
+\BOOKMARK [1][-]{section.3.2}{Software Analysis}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.2.1}{Level 0}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.2}{Level 1}{section.3.2}% 40
+\BOOKMARK [1][-]{section.3.3}{Database Design}{chapter.3}% 41
+\BOOKMARK [1][-]{section.3.4}{Structural analysis}{chapter.3}% 42
+\BOOKMARK [1][-]{section.3.5}{Global system architecture}{chapter.3}% 43
+\BOOKMARK [2][-]{subsection.3.5.1}{Class Organisation}{section.3.5}% 44
+\BOOKMARK [1][-]{section.3.6}{Other features/implementations}{chapter.3}% 45
+\BOOKMARK [1][-]{section.3.7}{Coding style}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.8}{Limitations and dependencies}{chapter.3}% 47

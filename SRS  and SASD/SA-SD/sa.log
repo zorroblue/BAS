@@ -1,0 +1,1025 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.10)  27 MAR 2016 22:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**sa.tex
+(./sa.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2013/12/19 v3.12 KOMA-Script document class (report)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2013/12/19 v3.12 KOMA-Script package (loading files)
+
+Package scrlfile, 2013/12/19 v3.12 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2013/12/19 v3.12 KOMA-Script package (handling toc-files)
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 117.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 118.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 119.
+Package tocbasic Info: defining new hook before heading of `' on input line 112
+3.
+Class scrreprt Info: File `scrsize11pt.clo' used instead of
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 165
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2013/12/19 v3.12 KOMA-Script font size class option (11pt
+)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2013/12/19 v3.12 KOMA-Script package (type area)
+
+Package typearea, 2013/12/19 v3.12 KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip41
+\ta@div=\count79
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+\footheight=\skip45
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 17.3562pt
+(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1330.
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count87
+\c@table=\count88
+\bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count89
+\lst@gtempboxa=\box27
+\lst@token=\toks15
+\lst@length=\count90
+\lst@currlwidth=\dimen103
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen106
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box28
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(/usr/share/texlive/texmf-dist/tex/latex/underscore/underscore.sty
+Package: underscore 2006/09/13
+LaTeX Info: Redefining \_ on input line 42.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen109
+\Hy@linkcounter=\count98
+\Hy@pagecounter=\count99
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count100
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count101
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen110
+\Fld@menulength=\count102
+\Field@Width=\dimen111
+\Fld@charsize=\dimen112
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count103
+\c@Item=\count104
+\c@Hfootnote=\count105
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count106
+\c@bookmark@seq@number=\count107
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
+\babel@savecnt=\count108
+\U@D=\dimen113
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+
+Package hyperref Warning: Option `bookmarks' has already been used,
+(hyperref)                setting the option has no effect on input line 38.
+
+Package hyperref Info: Option `colorlinks' set `true' on input line 38.
+(./sa.aux
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:seqdiagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:statediagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:statediagram' multiply defined.
+
+)
+\openout1 = `sa.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+\c@lstlisting=\count109
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count110
+\scratchdimen=\dimen114
+\scratchbox=\box29
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen115
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box30
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package hyperref Info: Link coloring ON on input line 45.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count116
+)
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
+
+(./sa.out) (./sa.out)
+\@outlinefile=\write3
+\openout3 = `sa.out'.
+
+
+Overfull \hbox (36.98853pt too wide) in paragraph at lines 48--48
+ []
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./sa.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+ [2
+
+])
+\tf@toc=\write4
+\openout4 = `sa.toc'.
+
+ [3]
+Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by more several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface .
+
+[4
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 114.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+ [5] [6]
+Chapter 2.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Customer".
+jpg, id=271, 1168.365pt x 831.105pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Custo
+mer".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Custom
+er".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use 
+Case Diagrams/Customer".jpg used on input line 151.
+(pdftex.def)             Requested size: 418.25555pt x 297.52359pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/General Em
+ployee".jpg, id=272, 977.6525pt x 1322.9425pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Gener
+al Employee".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Genera
+l Employee".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use 
+Case Diagrams/General Employee".jpg used on input line 157.
+(pdftex.def)             Requested size: 418.25555pt x 565.98772pt.
+ [7
+
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Customer.j
+pg>] [8 </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Use Case Diagrams/Gen
+eral Employee.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Class Diagrams/cdFinal".jpg,
+ id=284, 1167.36125pt x 498.86375pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Class Diagrams/cdFinal"
+.jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Class Diagrams/cdFinal".
+jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Clas
+s Diagrams/cdFinal".jpg used on input line 165.
+(pdftex.def)             Requested size: 418.25555pt x 178.73827pt.
+ [9
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Class Diagrams/cdFinal.jpg>]
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Book query
+ and transactions".jpg, id=290, 425.59pt x 348.30125pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Book 
+query and transactions".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Book q
+uery and transactions".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequ
+ence Diagrams/Book query and transactions".jpg used on input line 173.
+(pdftex.def)             Requested size: 425.58894pt x 348.3004pt.
+
+Overfull \hbox (7.33339pt too wide) in paragraph at lines 173--174
+[][] 
+ []
+
+[10
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Book query
+ and transactions.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/2".jpg, id=296, 157.58875pt 
+x 156.585pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/2".jpg Graphic file (ty
+pe jpg)
+ <use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/2".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/2".j
+pg used on input line 181.
+(pdftex.def)             Requested size: 157.58835pt x 156.58461pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/ProcureBoo
+ks".jpg, id=297, 246.9225pt x 235.88126pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Procu
+reBooks".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Procur
+eBooks".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequ
+ence Diagrams/ProcureBooks".jpg used on input line 189.
+(pdftex.def)             Requested size: 246.92188pt x 235.88068pt.
+ [11
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/2.jpg> </home/rameshwar/Fina
+lAssignmnet/BAS/SA-SD/images/Sequence Diagrams/ProcureBooks.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/UpdateInve
+ntory".jpg, id=305, 156.585pt x 156.585pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Updat
+eInventory".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/Update
+Inventory".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequ
+ence Diagrams/UpdateInventory".jpg used on input line 198.
+(pdftex.def)             Requested size: 156.58461pt x 156.58461pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/View reque
+sts".jpg, id=306, 175.65625pt x 205.76875pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/View 
+requests".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/View r
+equests".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequ
+ence Diagrams/View requests".jpg used on input line 205.
+(pdftex.def)             Requested size: 175.6558pt x 205.76823pt.
+ [12
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/UpdateInve
+ntory.jpg> </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Sequence Diagrams/
+View requests.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/Book 
+query and transactions1".jpg, id=313, 1247.66125pt x 566.115pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/
+Book query and transactions1".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/B
+ook query and transactions1".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Comm
+unication Diagrams/Book query and transactions1".jpg used on input line 214.
+(pdftex.def)             Requested size: 418.25555pt x 189.7728pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/1".jpg, id=314, 685.56125pt 
+x 134.5025pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/1".jpg Graphic file (ty
+pe jpg)
+ <use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/1".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/1".j
+pg used on input line 220.
+(pdftex.def)             Requested size: 418.25555pt x 82.06076pt.
+
+[13
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/Book 
+query and transactions1.jpg> </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/
+1.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/Procu
+reBooks".jpg, id=320, 673.51625pt x 330.23375pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/
+ProcureBooks".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/P
+rocureBooks".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Comm
+unication Diagrams/ProcureBooks".jpg used on input line 229.
+(pdftex.def)             Requested size: 418.25555pt x 205.0804pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/Updat
+eInventory".jpg, id=321, 883.3pt x 182.6825pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/
+UpdateInventory".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/U
+pdateInventory".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Comm
+unication Diagrams/UpdateInventory".jpg used on input line 237.
+(pdftex.def)             Requested size: 418.25555pt x 86.50189pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/View 
+requests".jpg, id=322, 786.94pt x 136.51pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/
+View requests".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/V
+iew requests".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Comm
+unication Diagrams/View requests".jpg used on input line 245.
+(pdftex.def)             Requested size: 418.25555pt x 72.55408pt.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Manager".j
+pg, id=323, 866.23625pt x 431.6125pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Manag
+er".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Manage
+r".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Acti
+vity Diagrams/Manager".jpg used on input line 254.
+(pdftex.def)             Requested size: 418.25555pt x 208.4032pt.
+ [14
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Diagrams/Procu
+reBooks.jpg> </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Communication Di
+agrams/UpdateInventory.jpg> </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/C
+ommunication Diagrams/View requests.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Query for 
+book".jpg, id=328, 1169.36874pt x 520.94624pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Query
+ for book".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Query 
+for book".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Acti
+vity Diagrams/Query for book".jpg used on input line 261.
+(pdftex.def)             Requested size: 418.25555pt x 186.33226pt.
+ [15 </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Manage
+r.jpg> </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Quer
+y for book.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Stock arri
+val".jpg, id=333, 772.8875pt x 277.035pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Stock
+ arrival".jpg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Stock 
+arrival".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Acti
+vity Diagrams/Stock arrival".jpg used on input line 268.
+(pdftex.def)             Requested size: 418.25555pt x 149.92216pt.
+ [16
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Activity Diagrams/Stock arri
+val.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Book".jpg, id
+=338, 503.8825pt x 283.0575pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Book".jp
+g Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Book".jpg
+>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Stat
+e Diagrams/Book".jpg used on input line 276.
+(pdftex.def)             Requested size: 418.25555pt x 234.95493pt.
+ [17
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Book.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Cart".jpg, id
+=343, 498.86375pt x 374.39874pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Cart".jp
+g Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Cart".jpg
+>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Stat
+e Diagrams/Cart".jpg used on input line 284.
+(pdftex.def)             Requested size: 418.25555pt x 313.91008pt.
+ [18
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Cart.jpg>]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Order".jpg, i
+d=348, 88.33pt x 521.95pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Order".j
+pg Graphic file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Order".jp
+g>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/Stat
+e Diagrams/Order".jpg used on input line 291.
+(pdftex.def)             Requested size: 88.32977pt x 521.94872pt.
+ [19
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/images/State Diagrams/Order.jpg>]
+Chapter 3.
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/CDfinal".png, id=354, 737.75626pt x
+ 577.15625pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/CDfinal".png Graphic file (typ
+e png)
+ <use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/CDfinal".png>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/CDfinal".pn
+g used on input line 308.
+(pdftex.def)             Requested size: 418.25555pt x 327.20352pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--333
+
+ []
+
+[20
+
+] [21 </home/rameshwar/FinalAssignmnet/BAS/SA-SD/CDfinal.png>] [22]
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/Data Flow Diagramfinalest".png, id=
+370, 1334.9875pt x 747.79375pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/Data Flow Diagramfinalest".png
+ Graphic file (type png)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/Data Flow Diagramfinalest".png>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/Data Flow D
+iagramfinalest".png used on input line 342.
+(pdftex.def)             Requested size: 418.25555pt x 234.2783pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+<"/home/rameshwar/FinalAssignmnet/BAS/SA-SD/StructuralAnalysis".jpg, id=371, 13
+50.04375pt x 758.835pt>
+File: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/StructuralAnalysis".jpg Graphi
+c file (type jpg)
+
+<use "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/StructuralAnalysis".jpg>
+Package pdftex.def Info: "/home/rameshwar/FinalAssignmnet/BAS/SA-SD/StructuralA
+nalysis".jpg used on input line 363.
+(pdftex.def)             Requested size: 418.25555pt x 235.08589pt.
+
+[23
+
+ </home/rameshwar/FinalAssignmnet/BAS/SA-SD/Data Flow Diagramfinalest.png>]
+<Actors.jpg, id=378, 269.005pt x 541.02126pt>
+File: Actors.jpg Graphic file (type jpg)
+ <use Actors.jpg>
+Package pdftex.def Info: Actors.jpg used on input line 373.
+(pdftex.def)             Requested size: 269.00433pt x 541.01993pt.
+ [24 </home/rameshwar/FinalAssignmnet/BAS/SA-SD/StructuralAnalysis.jpg>] [25 <.
+/Actors.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+[26
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
+ [27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
+ (./sa.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 416.
+Package rerunfilecheck Info: File `sa.out' has not changed.
+(rerunfilecheck)             Checksum: 8B098345AEA5C728E76D4FB424B832C9;3065.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 416.
+ ) 
+Here is how much of TeX's memory you used:
+ 8727 strings out of 493304
+ 137781 string characters out of 6139871
+ 267953 words of memory out of 5000000
+ 11982 multiletter control sequences out of 15000+600000
+ 9487 words of font info for 33 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 36i,7n,38p,413b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on sa.pdf (27 pages, 1572344 bytes).
+PDF statistics:
+ 445 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 492 words of extra memory for PDF output out of 10000 (max. 10000000)
+
