@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/zorroblue/BAS.svg?branch=travis-test)](https://travis-ci.org/zorroblue/BAS)
+[![Build Status](https://travis-ci.org/zorroblue/BAS.svg?branch=master)](https://travis-ci.org/zorroblue/BAS)
 
 <h1>Book Automation Software(BAS)</h1>
 <h3>This is the repo for the Software Lab assignment 2016.</h3>
