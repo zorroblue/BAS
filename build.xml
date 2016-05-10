@@ -65,121 +65,12 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>	         
+    <target name="compile">
+         <echo message="Compiling source code"/>
     </target>
-    <target name="TestRunner">
-        <java classname="tests.TestRunner" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
+    <target name="all" depends="clean, compile" description="Builds the whole project">
+        <echo>Doing all</echo>
     </target>
-    <target name="ReportWriter">
-        <java classname="pdfwriter.ReportWriter" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="TestTransactionDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestTransactionDao" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="Interface1">
-        <java classname="employee_view.Interface1" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Interface_new">
-        <java classname="employee_view.Interface_new" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Application">
-        <java classname="Application" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Main (6)">
-        <java classname="application.Main" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Query">
-        <java classname="views.Query" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="TestNotInCollectionDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestNotInCollectionDao" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="TestConnection">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestConnection" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="TestPublisherDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestPublisherDao" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="Interface">
-        <java classname="views.Home" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="TestVendorDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestVendorDao" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="Interface (1)">
-        <java classname="employee_view.Interface" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="TestBookDao">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="tests.TestBookDao" todir="${junit.output.dir}"/>
-            <classpath refid="BAS.classpath"/>
-        </junit>
-    </target>
-    <target name="Interface_final">
-        <java classname="employee_view.Interface_final" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Temp">
-        <java classname="views.Temp" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="Inter">
-        <java classname="views.Inter" failonerror="true" fork="yes">
-            <classpath refid="BAS.classpath"/>
-        </java>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
-    </target>
+   
 </project>
