@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="BAS">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../opt/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="BAS.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../Desktop/mysql-connector-java-5.1.38-bin.jar"/>
+        <pathelement location="../jfxrt.jar"/>
+        <pathelement location="../Downloads/jfoenix.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/jcalendar-1.3.3.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/itextpdf-5.5.9.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/icepdf-core-4.3.3.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/icepdf-viewer-4.3.3.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/antlr-2.7.7.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/dom4j-1.6.1.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/hibernate-commons-annotations-4.0.2.Final.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/hibernate-core-4.2.3.Final.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/javassist-3.15.0-GA.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/jboss-logging-3.1.0.GA.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/required/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/lib/jpa/hibernate-entitymanager-4.2.3.Final.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/hamcrest-core-1.3.jar"/>
+        <pathelement location="hibernate-release-4.2.3.Final/junit-4.12.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="BAS.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>	         
+    <target name="compile">
+         <echo message="Compiling source code"/>
+    </target>
+    <target name="test" depends="clean, compile" description="Builds the whole project">
+        <echo>Doing all</echo>
+    </target>
+   
+</project>
